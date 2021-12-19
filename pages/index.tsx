@@ -7,8 +7,6 @@ import { signOut } from "next-auth/client";
 const Home: NextPage = () => {
   const [session, loading] = useSession();
 
-  console.log(session);
-
   return (
     <div>
       <Head>
