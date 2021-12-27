@@ -2,12 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-background: #0c1116;
+  --color-font: #fff;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #7b00eed3 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #7b00eed3;
+  border-radius: 0.5rem;
+  border: 0px none #ffffff;
+}
+
+.editor a {
+  @apply text-purple-400;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Overpass", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+html {
+  background-color: var(--color-background);
+  color: var(--color-font);
+  background-image: url("/background.jpg");
+  background-position: right top;
+  background-repeat: no-repeat;
 }
 
 a {
@@ -17,4 +54,168 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+h1 {
+  @apply text-[3.5rem] font-bold leading-[3.5rem] font-montserrat;
+}
+
+h2 {
+  @apply text-[2.5rem] font-bold leading-[3rem] font-montserrat;
+}
+
+h3 {
+  @apply text-[2rem] font-bold leading-[3.5rem] font-montserrat;
+}
+
+h4 {
+  @apply text-[1.5rem] font-bold leading-[2rem] font-montserrat;
+}
+
+h5 {
+  @apply text-[1.25rem] font-bold leading-[2rem] tracking-wider font-montserrat;
+}
+
+.navigation__item {
+  @apply px-5 pt-[1.5rem] pb-[1.2rem] whitespace-nowrap;
+}
+
+.navigation__item:hover {
+  background: rgba(158, 40, 255, 0.1);
+  background: -moz-radial-gradient(
+    circle,
+    rgba(158, 40, 255, 0.1) 20%,
+    rgba(12, 17, 22, 1) 90%
+  );
+  background: -webkit-radial-gradient(
+    circle,
+    rgba(158, 40, 255, 0.1) 20%,
+    rgba(12, 17, 22, 1) 90%
+  );
+  background: radial-gradient(
+    circle,
+    rgba(158, 40, 255, 0.1) 20%,
+    rgba(12, 17, 22, 1) 90%
+  );
+}
+
+.navigation__item::after {
+  content: "";
+  display: block;
+  width: 1.5rem;
+  height: 0.1rem;
+  background: transparent;
+  margin-top: -1px;
+}
+
+.navigation__item:hover::after {
+  background: rgba(158, 40, 255, 0.75);
+}
+
+.navigation__item_footer::after {
+  content: "";
+  display: block;
+  width: 1.5rem;
+  height: 0.1rem;
+  background: transparent;
+  margin-top: -1px;
+}
+
+.navigation__item_footer:hover::after {
+  background: rgba(158, 40, 255, 0.75);
+}
+
+.navigation__item_active {
+  background: rgba(158, 40, 255, 0.1);
+  background: -moz-radial-gradient(
+    circle,
+    rgba(158, 40, 255, 0.1) 20%,
+    rgba(12, 17, 22, 1) 90%
+  );
+  background: -webkit-radial-gradient(
+    circle,
+    rgba(158, 40, 255, 0.1) 20%,
+    rgba(12, 17, 22, 1) 90%
+  );
+  background: radial-gradient(
+    circle,
+    rgba(158, 40, 255, 0.1) 20%,
+    rgba(12, 17, 22, 1) 90%
+  );
+}
+
+.navigation__item_active::after {
+  content: "";
+  display: block;
+  width: 1.5rem;
+  height: 0.1rem;
+  background: transparent;
+  margin-top: -1px;
+}
+
+.navigation__item_active::after {
+  background: rgba(158, 40, 255, 0.75);
+}
+
+/* Make clicks pass-through */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #7b23c7;
+
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #7b23c7, 0 0 5px #7b23c7;
+  opacity: 1;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#tooltip {
+  @apply whitespace-pre-wrap;
 }
