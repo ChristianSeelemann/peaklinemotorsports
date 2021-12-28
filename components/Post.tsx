@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,11 +17,13 @@ export default function Post({ post }: { post: postsProps }) {
             <div className="flex items-center justify-between gap-12">
               <h4>{post.headline}</h4>
               {post.simulation && post.simulation.logo && (
-                <div className="hidden sm:flex">
-                  <img
+                <div className="hidden max-w-[2.5rem] sm:flex">
+                  <Image
                     src={`${process.env.NEXT_PUBLIC_API_URL}${post.simulation.logo.url}`}
                     alt="Simulation Logo"
-                    className={`brightness-0 invert max-w-[2.5rem] shadow-lg h-auto ${
+                    height={post.simulation.logo.height}
+                    width={post.simulation.logo.width}
+                    className={`brightness-0 invert shadow-lg ${
                       post.simulation.slug === "iracing" && "rounded-md"
                     }`}
                   />
