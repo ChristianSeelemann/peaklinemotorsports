@@ -19,7 +19,7 @@ export default function Stream({ stream }: props) {
       key={stream.user_login}
     >
       <a target="_blank">
-        <div className="flex items-center justify-between h-16 gap-4 p-6 rounded-md shadow-md bg-gradient-to-r from-purple-500/90 to-purple-700/90">
+        <div className="flex items-center justify-between h-16 gap-4 p-6 rounded-md shadow-md select-none bg-gradient-to-r from-purple-500/90 to-purple-700/90">
           <div className="w-7">
             <FaTwitch className="text-3xl" />
           </div>
