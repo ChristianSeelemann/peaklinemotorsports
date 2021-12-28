@@ -8,7 +8,7 @@ type props = {
 
 export default function Welcome({ streams }: props) {
   return (
-    <section className="flex justify-between px-4 mt-8 sm:mt-10 md:mt-16 sm:px-8 lg:px-16 lg:mt-24">
+    <section className="flex justify-between px-4 mt-8 select-none sm:mt-10 md:mt-16 sm:px-8 lg:px-16 lg:mt-24">
       <div className="self-center w-full text-center lg:w-1/2 lg:text-left">
         <h1 className="text-3xl leading-[2.5rem] sm:leading-[3.5rem] sm:text-5xl">
           Willkommen bei <br />
