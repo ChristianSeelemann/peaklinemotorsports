@@ -9,6 +9,8 @@ module.exports = {
     extend: {
       gridTemplateColumns: {
         minmax: "repeat(auto-fit, minmax(18rem, 1fr))",
+        erfolge: "5rem 1fr 3.5rem",
+        erfolgesmall: "4rem 1fr 3.5rem",
       },
     },
     colors: {
