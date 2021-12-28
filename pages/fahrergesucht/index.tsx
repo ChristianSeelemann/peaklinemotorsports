@@ -53,7 +53,7 @@ const Fahrergesucht: NextPage = ({ session }: any) => {
       <Header session={session} />
 
       <main>
-        <section className="grid mx-6 mt-4 mb-12 xl:mb-20 md:mb-16 md:mt-12 lg:mt-20 sm:mx-8 lg:mx-16">
+        <section className="grid mx-6 mt-4 mb-12 select-none xl:mb-20 md:mb-16 md:mt-12 lg:mt-20 sm:mx-8 lg:mx-16">
           <h1 className="text-4xl sm:text-5xl leading-[2.5rem] sm:leading-[3.5rem]">
             Wir suchen dich!
           </h1>

@@ -1,11 +1,14 @@
-import type { NextApiRequest, NextApiResponse, NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import Driver from "../../components/Driver";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Sponsors from "../../components/Sponsors";
-import { driversProps } from "../../types/types";
 import pageProps from "../../utils/pageProps";
+import { FaDiscord } from "react-icons/fa";
+
+import type { NextApiRequest, NextApiResponse, NextPage } from "next";
+import { driversProps } from "../../types/types";
 
 type Props = {
   locale: string;
@@ -59,7 +62,7 @@ const Team: NextPage = ({ session, fetchedData: drivers }: any) => {
           <h1 className="text-4xl sm:text-5xl leading-[2.5rem] sm:leading-[3.5rem]">
             Unser Team
           </h1>
-          <h2 className="text-sm sm:text-base leading-[2rem] sm:leading-[2.5rem] font-normal font-overpass text-purple-400/60">
+          <h2 className="text-sm sm:text-base leading-[2rem] sm:leading-[2.5rem] font-normal font-montserrat text-purple-600">
             Die violetten Pfeile
           </h2>
         </section>
@@ -72,9 +75,26 @@ const Team: NextPage = ({ session, fetchedData: drivers }: any) => {
                 <Driver driver={driver} key={driver.id} />
               ))}
           </div>
-          <aside>
-            <div className="w-full px-6 py-5 border-b-2 bg-background border-purple-600/20 rounded-2xl lg:w-[22rem]">
-              Aside
+          <aside className="select-none">
+            <div className="w-full px-6 mt-8 lg:mt-0 sm:mt-10 py-5 border-b-2 bg-background border-purple-600/20 rounded-2xl lg:w-[18.5rem] 2xl:w-[21rem]">
+              <h4 className="text-purple-600">
+                Du willst ein Teil des Teams werden?
+              </h4>
+              <p className="mt-6 text-lg leading-7 whitespace-pre-wrap text-purple-100/90 font-overpass editor">
+                Egal ob Rookie oder Profi. Egal ob Rundstrecke, Oval oder
+                Schotter. Bei den violetten Pfeilen findet jeder Mensch mit
+                Passion für den virtuellen Motorsport ein Zuhause. Gespickt mit
+                Erfolgen oder als Rookie ganz frisch im Geschäft - Wir sind
+                immer offen für neue Teammitglieder!
+              </p>
+              <Link href="https://discord.gg/hgwdXYM">
+                <a target="_blank" className="group">
+                  <span className="flex items-center gap-3 mt-8 text-lg font-bold leading-7 text-purple-100/90 font-overpass">
+                    <FaDiscord className="-mt-1 text-4xl" />
+                    Join unserem Discord
+                  </span>
+                </a>
+              </Link>
             </div>
           </aside>
         </section>

@@ -74,7 +74,7 @@ const News: NextPage = ({
       <Header session={session} />
 
       <main>
-        <section className="grid mx-4 mt-4 md:mt-12 lg:mt-20 sm:mx-8 lg:mx-16">
+        <section className="grid mx-4 mt-4 select-none md:mt-12 lg:mt-20 sm:mx-8 lg:mx-16">
           <h1 className="text-4xl sm:text-5xl leading-[2.5rem] sm:leading-[3.5rem]">
             Neuigkeiten
           </h1>
@@ -88,7 +88,7 @@ const News: NextPage = ({
         </div>
 
         {postCount > 9 && (
-          <section className="flex gap-2 mx-4 mt-8 sm:mx-8 lg:mx-16">
+          <section className="flex gap-2 mx-4 mt-8 select-none sm:mx-8 lg:mx-16">
             {activePage !== 1 && (
               <div className="flex items-center mr-2 text-2xl">
                 <Link href={`/news?page=1`}>
