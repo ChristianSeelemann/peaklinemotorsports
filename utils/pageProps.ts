@@ -24,7 +24,8 @@ export default async function pageProps(
     | "getPostsWithFilter"
     | "countPosts"
     | "getPostsAll"
-    | "getDrivers",
+    | "getDrivers"
+    | "getAchievements",
   fetchTypeTwo?:
     | "getSinglePost"
     | "getPostsLastSix"
@@ -33,6 +34,7 @@ export default async function pageProps(
     | "countPosts"
     | "getPostsAll"
     | "getDrivers"
+    | "getAchievements"
 ) {
   await dbConnect();
 
@@ -108,6 +110,11 @@ export default async function pageProps(
         const response8 = await fetch(fetchURL8);
         fetchedData = await response8.json();
         break;
+      case "getAchievements":
+        const fetchURL9 = `${process.env.API_URL}/achievements?intern=true&_sort=date:desc`;
+        const response9 = await fetch(fetchURL9);
+        fetchedData = await response9.json();
+        break;
     }
   }
 
@@ -167,6 +174,11 @@ export default async function pageProps(
         const fetchURL8 = `${process.env.API_URL}/drivers?active=true`;
         const response8 = await fetch(fetchURL8);
         fetchedDataTwo = await response8.json();
+        break;
+      case "getAchievements":
+        const fetchURL9 = `${process.env.API_URL}/achievements?intern=true&_sort=date:desc`;
+        const response9 = await fetch(fetchURL9);
+        fetchedDataTwo = await response9.json();
         break;
     }
   }
