@@ -217,5 +217,5 @@ h5 {
 }
 
 #tooltip {
-  @apply whitespace-pre-wrap;
+  white-space: pre-wrap;
 }
