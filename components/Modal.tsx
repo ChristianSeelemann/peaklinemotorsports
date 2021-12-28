@@ -15,7 +15,7 @@ export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
   return (
     <>
       <section
-        className="absolute cursor-pointer left-0 z-[9998] flex flex-col w-full h-full grid-cols-1 grid-rows-2 px-12 py-8 bg-black/50 backdrop-blur-md"
+        className="absolute cursor-pointer left-0 z-[9998] flex flex-col w-full h-full grid-cols-1 grid-rows-2 px-8 sm:px-12 py-8 bg-black/50 backdrop-blur-md"
         style={{ top: `${fromTop}px` }}
         onClick={() => {
           setIsModalOpen(false);
@@ -40,11 +40,11 @@ export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
         </div>
       </section>
       <section
-        className="absolute w-full select-none px-12 left-0 z-[9999] overflow-hidden"
-        style={{ top: `${fromTop + 122}px` }}
+        className="absolute w-full select-none px-8 sm:px-12 pb-12 left-0 z-[9999] overflow-x-auto"
+        style={{ top: `${fromTop + 122}px`, height: "calc(100vh - 122px)" }}
       >
-        <article className="flex gap-8">
-          <section className="min-w-[20rem] max-w-[20rem]">
+        <article className="flex flex-col gap-6 xl:gap-10 xl:m-auto xl:w-2/3 xl:justify-center md:flex-row">
+          <section className="w-full md:min-w-[14]rem] lg:min-w-[18]rem] md:max-w-[14rem] lg:max-w-[18rem]">
             <Image
               src={`${process.env.NEXT_PUBLIC_API_URL}${driver.image.url}`}
               alt={`Bild von ${driver.name}`}
@@ -53,9 +53,12 @@ export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
               className="rounded-lg shadow-lg bg-purple-300/10"
             />
             {driver.simulations.length !== 0 && (
-              <div className="flex items-center justify-center gap-4 p-3 mt-4 rounded-lg bg-purple-600/80">
+              <div className="items-center justify-center hidden gap-4 p-3 mt-4 rounded-lg sm:flex bg-purple-600/80">
                 {driver.simulations.map((simulation: simulationsProps) => (
-                  <div key={simulation.id} className="relative w-10">
+                  <div
+                    key={simulation.id}
+                    className="relative w-10 md:w-8 lg:w-10"
+                  >
                     <Image
                       src={`${process.env.NEXT_PUBLIC_API_URL}${simulation.logo.url}`}
                       alt={`${simulation.title} Logo`}
@@ -71,9 +74,9 @@ export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
               </div>
             )}
           </section>
-          <section className="w-full">
+          <section className="w-full sm:mt-6 md:mt-2">
             <div className="flex items-center w-full gap-3">
-              <span className="w-12">
+              <span className="hidden w-12 sm:flex">
                 <Image
                   src={`${process.env.NEXT_PUBLIC_API_URL}${driver.nationality.url}`}
                   alt={`Bild von ${driver.nationality}`}
@@ -83,12 +86,12 @@ export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
                 />
               </span>
               <div className="flex items-center justify-between w-full">
-                <span className="text-3xl font-bold font-overpass">
+                <span className="pr-2 mt-2 text-3xl font-bold font-overpass">
                   {driver.name}
                 </span>
                 {driver.number && (
                   <span
-                    className="px-2 pt-2 shadow-md pb-[0.1rem] text-4xl font-bold rounded-lg font-overpass"
+                    className="px-2 -mt-2 pt-2 shadow-md sm:flex pb-[0.1rem] text-4xl font-bold rounded-lg font-overpass hidden"
                     style={{ backgroundColor: driver.color }}
                   >
                     {driver.number}
