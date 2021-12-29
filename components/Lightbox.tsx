@@ -22,7 +22,7 @@ export default function Lightbox({
   return (
     <>
       <section
-        className="absolute left-0 cursor-pointer z-[9998] flex flex-col w-full h-full grid-cols-1 grid-rows-2 p-12 bg-black/50 backdrop-blur-md"
+        className="absolute left-0 cursor-pointer z-[9998] flex flex-col w-full h-screen grid-cols-1 grid-rows-2 p-12 bg-black/50 backdrop-blur-md"
         style={{ top: `${fromTop}px` }}
         onClick={() => {
           const body = document.querySelector("body");
