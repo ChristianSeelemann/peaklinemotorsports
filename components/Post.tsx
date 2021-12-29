@@ -19,7 +19,7 @@ export default function Post({ post }: { post: postsProps }) {
               {post.simulation && post.simulation.logo && (
                 <div className="hidden max-w-[2.5rem] min-w-[2.5rem] self-end sm:flex sm:pb-[0.3rem]">
                   <Image
-                    src={`${process.env.API_URL}${post.simulation.logo.url}`}
+                    src={`${process.env.NEXT_PUBLIC_API_URL}${post.simulation.logo.url}`}
                     alt="Simulation Logo"
                     height={post.simulation.logo.height}
                     width={post.simulation.logo.width}
@@ -33,7 +33,7 @@ export default function Post({ post }: { post: postsProps }) {
           </div>
           <div className="absolute w-full h-full transition-all duration-300 bg-gradient-to-b from-purple-500 to-purple-800">
             <Image
-              src={`${process.env.API_URL}${
+              src={`${process.env.NEXT_PUBLIC_API_URL}${
                 post.thumbnail.formats.medium
                   ? post.thumbnail.formats.medium.url
                   : post.thumbnail.url
