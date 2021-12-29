@@ -134,7 +134,7 @@ const Gallerie: NextPage = ({ session, fetchedData: posts }: any) => {
                     }
                   >
                     <Image
-                      src={`${process.env.NEXT_PUBLIC_API_URL}${
+                      src={`https://strapi.peaklinems.de${
                         image.formats.medium
                           ? image.formats.medium.url
                           : image.url

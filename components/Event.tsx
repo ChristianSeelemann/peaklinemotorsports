@@ -26,7 +26,7 @@ export default function Event({ event }: props) {
         <div>
           {event.simulation.logo && (
             <img
-              src={`${process.env.NEXT_PUBLIC_API_URL}${event.simulation.logo.url}`}
+              src={`https://strapi.peaklinems.de${event.simulation.logo.url}`}
               alt="Simulation Logo"
               className={`brightness-0 invert max-w-[2.5rem] shadow-lg h-auto ${
                 event.simulation.slug === "iracing" && "rounded-md"
@@ -38,7 +38,7 @@ export default function Event({ event }: props) {
       <div className="absolute w-full h-full bg-gradient-to-l from-purple-700 to-purple-900/70">
         {event.competition.thumbnail && (
           <img
-            src={`${process.env.NEXT_PUBLIC_API_URL}${event.competition.thumbnail.formats.thumbnail.url}`}
+            src={`https://strapi.peaklinems.de${event.competition.thumbnail.formats.thumbnail.url}`}
             alt="Event Thumbnail"
             className="object-cover object-center w-full h-full opacity-40 brightness-[0.5]"
           />

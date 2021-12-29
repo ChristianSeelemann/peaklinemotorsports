@@ -53,7 +53,7 @@ export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
           <section className="w-full md:min-w-[14]rem] lg:min-w-[18]rem] md:max-w-[14rem] lg:max-w-[18rem]">
             {driver.image && (
               <Image
-                src={`${process.env.NEXT_PUBLIC_API_URL}${driver.image.url}`}
+                src={`https://strapi.peaklinems.de${driver.image.url}`}
                 alt={`Bild von ${driver.name}`}
                 height={driver.image.height}
                 width={driver.image.width}
@@ -68,7 +68,7 @@ export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
                     className="relative w-10 md:w-8 lg:w-10"
                   >
                     <Image
-                      src={`${process.env.NEXT_PUBLIC_API_URL}${simulation.logo.url}`}
+                      src={`https://strapi.peaklinems.de${simulation.logo.url}`}
                       alt={`${simulation.title} Logo`}
                       height={simulation.logo.height}
                       width={simulation.logo.width}
@@ -86,7 +86,7 @@ export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
             <div className="flex items-center w-full gap-3">
               <span className="hidden w-12 sm:flex">
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_API_URL}${driver.nationality.url}`}
+                  src={`https://strapi.peaklinems.de${driver.nationality.url}`}
                   alt={`Bild von ${driver.nationality}`}
                   height={driver.nationality.height}
                   width={driver.nationality.width}

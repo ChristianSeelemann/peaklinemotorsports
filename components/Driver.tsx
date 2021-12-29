@@ -36,7 +36,7 @@ export default function Driver({ driver }: Props) {
                 driver.simulations.map((simulation: simulationsProps) => (
                   <div key={simulation.id}>
                     <Image
-                      src={`${process.env.NEXT_PUBLIC_API_URL}${simulation.logo.url}`}
+                      src={`https://strapi.peaklinems.de${simulation.logo.url}`}
                       alt={`${simulation.title} Logo`}
                       width={simulation.logo.width}
                       height={simulation.logo.height}
@@ -53,7 +53,7 @@ export default function Driver({ driver }: Props) {
                   {driver.nationality && (
                     <span className="w-7">
                       <Image
-                        src={`${process.env.NEXT_PUBLIC_API_URL}${driver.nationality.url}`}
+                        src={`https://strapi.peaklinems.de${driver.nationality.url}`}
                         alt="Flagge"
                         width={driver.nationality.width}
                         height={driver.nationality.height}
@@ -78,7 +78,7 @@ export default function Driver({ driver }: Props) {
         <div className="absolute w-full h-full">
           {driver.image && (
             <Image
-              src={`${process.env.NEXT_PUBLIC_API_URL}${driver.image.url}`}
+              src={`https://strapi.peaklinems.de${driver.image.url}`}
               alt={`Bild von ${driver.name}`}
               layout="fill"
               className="object-cover object-center transition-all duration-300 bg-purple-300/10"

@@ -50,7 +50,7 @@ export default function Lightbox({
         style={{ top: `${fromTop + 128}px`, maxHeight: `calc(100vh - 188px)` }}
       >
         <Image
-          src={`${process.env.NEXT_PUBLIC_API_URL}${url}`}
+          src={`https://strapi.peaklinems.de${url}`}
           alt={name}
           width={width}
           height={height}
