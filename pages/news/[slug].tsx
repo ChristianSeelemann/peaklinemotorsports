@@ -116,7 +116,7 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
           {post.thumbnail && post.thumbnail.url && (
             <div className="block lg:min-w-[20rem] select-none relative">
               <Image
-                src={`${process.env.NEXT_PUBLIC_API_URL}${post.thumbnail.url}`}
+                src={`https://strapi.peaklinems.de${post.thumbnail.url}`}
                 alt="Post Image"
                 layout="responsive"
                 width={post.thumbnail.width}
@@ -131,7 +131,7 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
                         <a style={{ zIndex: index + 50 }} key={driver.id}>
                           <div className="w-12 h.-12 -ml-6 border-4 rounded-full sm:-ml-8 sm:w-14 sm:h-14 border-black/30">
                             <Image
-                              src={`${process.env.NEXT_PUBLIC_API_URL}${driver.image.url}`}
+                              src={`https://strapi.peaklinems.de${driver.image.url}`}
                               alt={`Bild von ${driver.name}`}
                               width={driver.image.width}
                               height={driver.image.height}
@@ -149,7 +149,7 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
                   {post.simulation.logo && post.simulation.logo.url && (
                     <div className="block w-6">
                       <Image
-                        src={`${process.env.NEXT_PUBLIC_API_URL}${post.simulation.logo.url}`}
+                        src={`https://strapi.peaklinems.de${post.simulation.logo.url}`}
                         alt="Simulation Logo"
                         height={post.simulation.logo.height}
                         width={post.simulation.logo.width}
@@ -216,7 +216,7 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
                     }
                   >
                     <Image
-                      src={`${process.env.NEXT_PUBLIC_API_URL}${
+                      src={`https://strapi.peaklinems.de${
                         image.formats.medium
                           ? image.formats.medium.url
                           : image.url
