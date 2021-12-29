@@ -17,7 +17,7 @@ export default function Post({ post }: { post: postsProps }) {
             <div className="flex items-center justify-between gap-12">
               <h4>{post.headline}</h4>
               {post.simulation && post.simulation.logo && (
-                <div className="hidden max-w-[2.5rem] min-w-[2.5rem] self-end sm:flex">
+                <div className="hidden max-w-[2.5rem] min-w-[2.5rem] self-end sm:flex sm:pb-[0.3rem]">
                   <Image
                     src={`${process.env.NEXT_PUBLIC_API_URL}${post.simulation.logo.url}`}
                     alt="Simulation Logo"
