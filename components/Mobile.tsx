@@ -6,27 +6,22 @@ export default function Mobile() {
     <>
       <section className="absolute left-0 z-50 grid w-full px-6 pt-6 pb-4 rounded-b-lg select-none bg-background top-12 lg:hidden">
         <ul className="grid text-lg font-bold tracking-wider uppercase font-overpass">
-          {/*           <Link href="/">
-            <a>
-              <li className="py-4">Die violetten Pfeile</li>
-            </a>
-          </Link> */}
-          <Link href="/">
+          <Link href="/news">
             <a>
               <li className="py-4">Neuigkeiten</li>
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/team">
             <a>
               <li className="py-4">Das Team</li>
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/erfolge">
             <a>
               <li className="py-4">Unsere Erfolge</li>
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/fahrergesucht">
             <a>
               <li className="py-4">
                 <div className="relative flex">
