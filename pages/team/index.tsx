@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import Driver from "../../components/Driver";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
@@ -23,6 +24,8 @@ type Props = {
 };
 
 const Team: NextPage = ({ session, fetchedData: drivers }: any) => {
+  const router = useRouter();
+
   return (
     <div>
       <Head>
@@ -54,6 +57,29 @@ const Team: NextPage = ({ session, fetchedData: drivers }: any) => {
         <meta name="application-name" content="Peakline Motorsports" />
         <meta name="msapplication-TileColor" content="#8d00ff" />
         <meta name="theme-color" content="#8d00ff" />
+        <meta name="twitter:card" content="summary" key="twcard" />
+        <meta
+          property="og:url"
+          content={`https://peaklinems.de${router.asPath}`}
+          key="ogurl"
+        />
+        <meta
+          property="og:image"
+          content="https://strapi.peaklinems.de/uploads/Flan_ch_F3_Monza_Rennbericht_10_f3f11b459e.jpg"
+          key="ogimage"
+        />
+        <meta
+          property="og:site_name"
+          content="Peakline Motorsports"
+          key="ogsitename"
+        />
+        <meta property="og:title" content="Unser Team" key="ogtitle" />
+        <meta
+          property="og:description"
+          content="Die violetten Pfeile"
+          key="ogdesc"
+        />
+        <meta property="og:type" content="website" />
       </Head>
 
       <Header session={session} />

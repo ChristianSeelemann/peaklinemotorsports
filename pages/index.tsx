@@ -77,7 +77,11 @@ const Home: NextPage = ({
           content="Peakline Motorsports"
           key="ogsitename"
         />
-        <meta property="og:title" content="Unser Team" key="ogtitle" />
+        <meta
+          property="og:title"
+          content="Peakline Motorsports"
+          key="ogtitle"
+        />
         <meta
           property="og:description"
           content="Die violetten Pfeile"
