@@ -1,10 +1,13 @@
-import type { NextApiRequest, NextApiResponse, NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
+import { FaDiscord } from "react-icons/fa";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Headline from "../../components/Headline";
 import Sponsors from "../../components/Sponsors";
 import pageProps from "../../utils/pageProps";
+
+import type { NextApiRequest, NextApiResponse, NextPage } from "next";
 
 type Props = {
   locale: string;
@@ -17,7 +20,7 @@ type Props = {
   };
 };
 
-const Fahrergesucht: NextPage = ({ session }: any) => {
+const Fahrergesucht: NextPage = () => {
   return (
     <div>
       <Head>
@@ -51,7 +54,7 @@ const Fahrergesucht: NextPage = ({ session }: any) => {
         <meta name="theme-color" content="#8d00ff" />
       </Head>
 
-      <Header session={session} />
+      <Header />
 
       <main>
         <Headline
@@ -59,8 +62,68 @@ const Fahrergesucht: NextPage = ({ session }: any) => {
           subheading="Werde ein Teil der violetten Pfeile"
         />
 
-        <section className="px-6 py-5 mx-6 mt-8 text-lg leading-7 whitespace-pre-wrap border-b-2 border-purple-600/20 sm:mx-8 lg:mx-16 rounded-2xl text-purple-100/90 font-overpass editor bg-background">
-          Folgt
+        <section className="flex flex-col justify-between gap-4 mx-6 mt-8 xl:gap-6 lg:flex-row sm:mx-8 lg:mx-16 2xl:gap-8">
+          <div className="w-full gap-5 px-6 py-5 border-b-2 bg-background border-purple-600/20 rounded-2xl h-fit">
+            <div className="grid gap-6">
+              <h4 className="text-purple-600">Warum wir zusammen passen?</h4>
+              <h5 className="text-base text-purple-400">
+                Welche Sim fahren wir?
+              </h5>
+              <p>
+                Im Gegensatz zu vielen anderen Teams sind wir nicht auf eine
+                feste Simulation festgelegt. Während wir aktuell in iRacing,
+                Assetto Corsa, Raceroom und Dirt 2.0 untwegs sind, sind wir
+                stets offen für Fahrer, welche ihre Leidenschaft für eine andere
+                Simulation entwickelt haben.
+              </p>
+              <h5 className="text-base text-purple-400">Was erwarten wir?</h5>
+              <p>
+                Unser Team besteht aus Fahrern aus den verschiedensten
+                Bereichen. Während manche schon Titel sammeln konnten fühlen
+                sich auch Rookies oder Gentleman bei uns sehr wohl.
+                <br />
+                <br />
+                Während der ein oder andere schon enorm viel Lebenserfahrung zu
+                bieten hat sind wir auch stets offen für jungen und frischen
+                Wind.
+                <br />
+                <br />
+                Egal ob Tourenwagen-Kämpfer, Formelsportler, Kartfahrer,
+                Oval-Junkie, Querfahrer oder Staubatmer. Bei uns findet jeder
+                ein Zuhause in familiärer Umgebung.
+              </p>
+              <h5 className="text-base text-purple-400">
+                Du bist auf der Suche?
+              </h5>
+              <p>
+                Egal ob du alleine suchst oder in einem kleinen Team eine neue
+                Heimat. Besuch uns einfach auf unserem Discord und quatsch uns
+                an.
+              </p>
+            </div>
+          </div>
+          <aside className="select-none">
+            <div className="w-full px-6 mt-8 lg:mt-0 sm:mt-10 py-5 border-b-2 bg-background border-purple-600/20 rounded-2xl lg:w-[18.5rem] 2xl:w-[21rem]">
+              <h4 className="text-purple-600">
+                Du willst ein Teil des Teams werden?
+              </h4>
+              <p className="mt-6 text-lg leading-7 whitespace-pre-wrap text-purple-100/90 font-overpass editor">
+                Egal ob Rookie oder Profi. Egal ob Rundstrecke, Oval oder
+                Schotter. Bei den violetten Pfeilen findet jeder Mensch mit
+                Passion für den virtuellen Motorsport ein Zuhause. Gespickt mit
+                Erfolgen oder als Rookie ganz frisch im Geschäft - Wir sind
+                immer offen für neue Teammitglieder!
+              </p>
+              <Link href="https://discord.gg/hgwdXYM">
+                <a target="_blank" className="group">
+                  <span className="flex items-center gap-3 mt-8 text-lg font-bold leading-7 text-purple-100/90 font-overpass">
+                    <FaDiscord className="-mt-1 text-4xl" />
+                    Join unserem Discord
+                  </span>
+                </a>
+              </Link>
+            </div>
+          </aside>
         </section>
 
         <Sponsors />
@@ -73,6 +136,6 @@ const Fahrergesucht: NextPage = ({ session }: any) => {
 
 export default Fahrergesucht;
 
-export const getServerSideProps = async (context: Props) => {
+/* export const getServerSideProps = async (context: Props) => {
   return pageProps(context);
-};
+}; */

@@ -17,7 +17,7 @@ type Props = {
   };
 };
 
-const Impressum: NextPage = ({ session }: any) => {
+const Impressum: NextPage = () => {
   return (
     <div>
       <Head>
@@ -51,7 +51,7 @@ const Impressum: NextPage = ({ session }: any) => {
         <meta name="theme-color" content="#8d00ff" />
       </Head>
 
-      <Header session={session} />
+      <Header />
 
       <main>
         <Headline headline="Impressum" />
@@ -93,6 +93,7 @@ const Impressum: NextPage = ({ session }: any) => {
 
 export default Impressum;
 
-export const getServerSideProps = async (context: Props) => {
+/* export const getServerSideProps = async (context: Props) => {
   return pageProps(context);
 };
+ */

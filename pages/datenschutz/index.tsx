@@ -18,7 +18,7 @@ type Props = {
   };
 };
 
-const Datenschutz: NextPage = ({ session }: any) => {
+const Datenschutz: NextPage = () => {
   return (
     <div>
       <Head>
@@ -52,7 +52,7 @@ const Datenschutz: NextPage = ({ session }: any) => {
         <meta name="theme-color" content="#8d00ff" />
       </Head>
 
-      <Header session={session} />
+      <Header />
 
       <main>
         <Headline headline="Datenschutz" />
@@ -158,6 +158,7 @@ const Datenschutz: NextPage = ({ session }: any) => {
 
 export default Datenschutz;
 
-export const getServerSideProps = async (context: Props) => {
+/* export const getServerSideProps = async (context: Props) => {
   return pageProps(context);
 };
+ */

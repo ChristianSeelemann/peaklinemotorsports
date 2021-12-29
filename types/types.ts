@@ -1,5 +1,5 @@
 export interface sessionProps {
-  session: {
+  session?: {
     banned: boolean;
     email: string;
     image: string;
