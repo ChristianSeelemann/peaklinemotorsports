@@ -68,7 +68,7 @@ const Team: NextPage = ({ session, fetchedData: drivers }: any) => {
         </section>
 
         <section className="flex flex-col justify-between gap-4 mx-6 mt-8 xl:gap-6 lg:flex-row sm:mx-8 lg:mx-16 2xl:gap-8">
-          <div className="grid w-full grid-cols-1 gap-3 md:gap-4 2xl:grid-cols-4 lg:gap-4 xl:gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+          <div className="grid w-full grid-cols-1 gap-5 sm:gap-3 md:gap-4 2xl:grid-cols-4 lg:gap-4 xl:gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
             {drivers &&
               drivers.length !== 0 &&
               drivers.map((driver: driversProps) => (
