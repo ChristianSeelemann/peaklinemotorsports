@@ -7,6 +7,7 @@ import pageProps from "../../utils/pageProps";
 
 import { achievementsProps } from "../../types/types";
 import type { NextApiRequest, NextApiResponse, NextPage } from "next";
+import Headline from "../../components/Headline";
 
 type Props = {
   locale: string;
@@ -56,14 +57,10 @@ const Erfolge: NextPage = ({ session, fetchedData: achievements }: any) => {
       <Header session={session} />
 
       <main>
-        <section className="grid mx-6 mt-4 mb-12 select-none xl:mb-20 md:mb-16 md:mt-12 lg:mt-20 sm:mx-8 lg:mx-16">
-          <h1 className="text-4xl sm:text-5xl leading-[2.5rem] sm:leading-[3.5rem]">
-            Unsere Erfolge
-          </h1>
-          <h2 className="text-sm sm:text-base leading-[2rem] sm:leading-[2.5rem] font-normal font-montserrat text-purple-600">
-            Bronzene, Silberne und Goldene Pfeile
-          </h2>
-        </section>
+        <Headline
+          headline="Unsere Erfolge"
+          subheading="Bronzene, Silberne und Goldene Pfeile"
+        />
 
         <section className="flex flex-col mx-6 mt-8 xl:flex-row-reverse sm:mx-8 lg:mx-16 rounded-2xl font-overpass">
           <aside className="w-full xl:max-w-[20rem] xl:min-w-[20rem] mb-12 xl:ml-12 xl:mb-0">

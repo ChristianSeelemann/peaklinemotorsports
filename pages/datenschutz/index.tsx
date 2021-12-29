@@ -5,6 +5,7 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Sponsors from "../../components/Sponsors";
 import pageProps from "../../utils/pageProps";
+import Headline from "../../components/Headline";
 
 type Props = {
   locale: string;
@@ -54,11 +55,7 @@ const Datenschutz: NextPage = ({ session }: any) => {
       <Header session={session} />
 
       <main>
-        <section className="grid mx-6 mt-4 mb-12 select-none xl:mb-20 md:mb-16 md:mt-12 lg:mt-20 sm:mx-8 lg:mx-16">
-          <h1 className="text-4xl sm:text-5xl leading-[2.5rem] sm:leading-[3.5rem]">
-            Datenschutz
-          </h1>
-        </section>
+        <Headline headline="Datenschutz" />
 
         <section className="px-6 py-5 mx-6 mt-8 text-lg leading-7 break-words whitespace-pre-wrap border-b-2 sm:mx-8 lg:mx-16 rounded-2xl bg-background border-purple-600/20 text-purple-100/90 font-overpass editor">
           <p>

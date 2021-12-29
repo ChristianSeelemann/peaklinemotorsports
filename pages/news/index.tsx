@@ -13,6 +13,7 @@ import {
   BiChevronsLeft,
   BiChevronsRight,
 } from "react-icons/bi";
+import Headline from "../../components/Headline";
 
 type Props = {
   locale: string;
@@ -74,14 +75,10 @@ const News: NextPage = ({
       <Header session={session} />
 
       <main>
-        <section className="grid mx-4 mt-4 select-none md:mt-12 lg:mt-20 sm:mx-8 lg:mx-16">
-          <h1 className="text-4xl sm:text-5xl leading-[2.5rem] sm:leading-[3.5rem]">
-            Neuigkeiten
-          </h1>
-          <h2 className="text-sm sm:text-base leading-[2rem] sm:leading-[2.5rem] font-normal font-overpass text-purple-400/60">
-            Aktuelles. Rennberichte. Wissenswertes.
-          </h2>
-        </section>
+        <Headline
+          headline="Neugikeiten"
+          subheading="Aktuelles. Rennberichte. Wissenswertes."
+        />
 
         <div className="-mt-12 lg:-mt-12">
           <Posts posts={posts} />

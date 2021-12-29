@@ -8,6 +8,7 @@ import pageProps from "../../utils/pageProps";
 import { postsProps } from "../../types/types";
 import { useState } from "react";
 import Lightbox from "../../components/Lightbox";
+import Headline from "../../components/Headline";
 
 type Props = {
   locale: string;
@@ -82,14 +83,10 @@ const Gallerie: NextPage = ({ session, fetchedData: posts }: any) => {
       <Header session={session} />
 
       <main>
-        <section className="grid mx-6 mt-4 mb-12 select-none xl:mb-20 md:mb-16 md:mt-12 lg:mt-20 sm:mx-8 lg:mx-16">
-          <h1 className="text-4xl sm:text-5xl leading-[2.5rem] sm:leading-[3.5rem]">
-            Gallerie
-          </h1>
-          <h2 className="text-sm sm:text-base leading-[2rem] sm:leading-[2.5rem] font-normal font-overpass text-purple-400/60">
-            Impressionen direkt vom Track
-          </h2>
-        </section>
+        <Headline
+          headline="Gallerie"
+          subheading="Impressionen direkt vom Track"
+        />
 
         <section className="px-4 mt-8 select-none sm:px-8 lg:px-16">
           <div className="grid grid-cols-2 sm:pb-8 rounded-2xl md:grid-cols-3 xl:grid-cols-5 lg:grid-cols-4 gap-x-2 lg:gap-x-4 lg:gap-y-2 2xl:grid-cols-6">

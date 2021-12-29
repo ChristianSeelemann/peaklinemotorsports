@@ -9,6 +9,7 @@ import { FaDiscord } from "react-icons/fa";
 
 import type { NextApiRequest, NextApiResponse, NextPage } from "next";
 import { driversProps } from "../../types/types";
+import Headline from "../../components/Headline";
 
 type Props = {
   locale: string;
@@ -58,14 +59,7 @@ const Team: NextPage = ({ session, fetchedData: drivers }: any) => {
       <Header session={session} />
 
       <main>
-        <section className="grid mx-6 mt-4 mb-12 select-none xl:mb-20 md:mb-16 md:mt-12 lg:mt-20 sm:mx-8 lg:mx-16">
-          <h1 className="text-4xl sm:text-5xl leading-[2.5rem] sm:leading-[3.5rem]">
-            Unser Team
-          </h1>
-          <h2 className="text-sm sm:text-base leading-[2rem] sm:leading-[2.5rem] font-normal font-montserrat text-purple-600">
-            Die violetten Pfeile
-          </h2>
-        </section>
+        <Headline headline="Unser Team" subheading="Die violetten Pfeile" />
 
         <section className="flex flex-col justify-between gap-4 mx-6 mt-8 xl:gap-6 lg:flex-row sm:mx-8 lg:mx-16 2xl:gap-8">
           <div className="grid w-full grid-cols-1 gap-5 sm:gap-3 md:gap-4 2xl:grid-cols-4 lg:gap-4 xl:gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">

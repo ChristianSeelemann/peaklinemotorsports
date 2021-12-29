@@ -9,6 +9,7 @@ import { HiPencil } from "react-icons/hi";
 
 import type { NextApiRequest, NextApiResponse, NextPage } from "next";
 import Lightbox from "../../components/Lightbox";
+import Headline from "../../components/Headline";
 
 type Props = {
   locale: string;
@@ -87,13 +88,7 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
       <Header session={session} />
 
       <main>
-        <section className="grid mx-4 mt-4 mb-16 select-none lg:mb-24 md:mb-20 md:mt-12 lg:mt-20 sm:mx-8 lg:mx-16">
-          <div className="flex items-center justify-between gap-8">
-            <h1 className="text-4xl sm:text-5xl leading-[2.5rem] sm:leading-[3.5rem]">
-              {post.headline}
-            </h1>
-          </div>
-        </section>
+        <Headline headline={post.headline} />
         <article className="mx-4 overflow-hidden lg:flex lg:justify-between lg:gap-6 rounded-t-xl sm:mx-8 lg:mx-16">
           {post.thumbnail && post.thumbnail.url && (
             <div className="block lg:min-w-[20rem] select-none relative">
