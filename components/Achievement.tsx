@@ -45,7 +45,7 @@ export default function Achievement({ achievement }: Props) {
       typeText = "Fahrerchampion";
       break;
     case "champion_team":
-      typeText = "Teamchampion";
+      typeText = "Teamchampions";
       break;
     case "second_driver":
       typeText = "2. Fahrerwertung";
