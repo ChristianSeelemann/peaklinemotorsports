@@ -1,10 +1,10 @@
 import type { NextApiRequest, NextApiResponse, NextPage } from "next";
 import Link from "next/link";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Sponsors from "../../components/Sponsors";
-import pageProps from "../../utils/pageProps";
 import Headline from "../../components/Headline";
 
 type Props = {
@@ -19,6 +19,8 @@ type Props = {
 };
 
 const Datenschutz: NextPage = () => {
+  const router = useRouter();
+
   return (
     <div>
       <Head>
@@ -50,6 +52,29 @@ const Datenschutz: NextPage = () => {
         <meta name="application-name" content="Peakline Motorsports" />
         <meta name="msapplication-TileColor" content="#8d00ff" />
         <meta name="theme-color" content="#8d00ff" />
+        <meta name="twitter:card" content="summary" key="twcard" />
+        <meta
+          property="og:url"
+          content={`https://peaklinems.de${router.asPath}`}
+          key="ogurl"
+        />
+        <meta
+          property="og:image"
+          content="https://strapi.peaklinems.de/uploads/Flan_ch_F3_Monza_Rennbericht_10_f3f11b459e.jpg"
+          key="ogimage"
+        />
+        <meta
+          property="og:site_name"
+          content="Peakline Motorsports"
+          key="ogsitename"
+        />
+        <meta property="og:title" content="Datenschutz" key="ogtitle" />
+        <meta
+          property="og:description"
+          content="Die violetten Pfeile"
+          key="ogdesc"
+        />
+        <meta property="og:type" content="website" />
       </Head>
 
       <Header />
