@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import Head from "next/head";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
@@ -107,24 +106,22 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
                 className="lg:shadow-lg lg:rounded-lg bg-purple-300/10"
               />
               {post.drivers.length !== 0 && (
-                <div className="absolute flex top-2 sm:top-4 right-4 sm:right-8 lg:right-4">
+                <div className="absolute z-10 flex top-2 sm:top-4 right-4 sm:right-8 lg:right-4">
                   {post.drivers.map(
                     (driver: any, index: number) =>
                       driver.image && (
-                        <Link href={`/drivers/${driver.slug}`} key={driver.id}>
-                          <a style={{ zIndex: index + 50 }}>
-                            <div className="w-12 h.-12 -ml-6 border-4 rounded-full sm:-ml-8 sm:w-14 sm:h-14 border-black/30">
-                              <Image
-                                src={`${process.env.NEXT_PUBLIC_API_URL}${driver.image.url}`}
-                                alt={`Bild von ${driver.name}`}
-                                width={driver.image.width}
-                                height={driver.image.height}
-                                layout="responsive"
-                                className="rounded-full"
-                              />
-                            </div>
-                          </a>
-                        </Link>
+                        <a style={{ zIndex: index + 50 }}>
+                          <div className="w-12 h.-12 -ml-6 border-4 rounded-full sm:-ml-8 sm:w-14 sm:h-14 border-black/30">
+                            <Image
+                              src={`${process.env.NEXT_PUBLIC_API_URL}${driver.image.url}`}
+                              alt={`Bild von ${driver.name}`}
+                              width={driver.image.width}
+                              height={driver.image.height}
+                              layout="responsive"
+                              className="rounded-full"
+                            />
+                          </div>
+                        </a>
                       )
                   )}
                 </div>
