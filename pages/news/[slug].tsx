@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Sponsors from "../../components/Sponsors";
@@ -29,6 +30,9 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
   const [imageHeight, setImageHeight] = useState(0);
   const [imageWidth, setImageWidth] = useState(0);
   const [imageName, setImageName] = useState("");
+
+  const router = useRouter();
+  console.log(router.asPath);
 
   const post = posts[0];
 
@@ -83,6 +87,21 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
         <meta name="application-name" content="Peakline Motorsports" />
         <meta name="msapplication-TileColor" content="#8d00ff" />
         <meta name="theme-color" content="#8d00ff" />
+        <meta name="twitter:card" content="summary" key="twcard" />
+        <meta
+          property="og:url"
+          content={`https://peaklinems.de${router.asPath}`}
+          key="ogurl"
+        />
+        <meta property="og:image" content={post.thumbnail.url} key="ogimage" />
+        <meta
+          property="og:site_name"
+          content="Peakline Motorsports"
+          key="ogsitename"
+        />
+        <meta property="og:title" content={post.headline} key="ogtitle" />
+        <meta property="og:description" content="Simracing Team" key="ogdesc" />
+        <meta property="og:type" content="article" />
       </Head>
 
       <Header session={session} />
