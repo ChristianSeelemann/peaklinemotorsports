@@ -93,14 +93,18 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
           content={`https://peaklinems.de${router.asPath}`}
           key="ogurl"
         />
-        <meta property="og:image" content={post.thumbnail.url} key="ogimage" />
+        <meta
+          property="og:image"
+          content={`${process.env.NEXT_PUBLIC_API_URL}${post.thumbnail.url}`}
+          key="ogimage"
+        />
         <meta
           property="og:site_name"
           content="Peakline Motorsports"
           key="ogsitename"
         />
         <meta property="og:title" content={post.headline} key="ogtitle" />
-        <meta property="og:description" content="Simracing Team" key="ogdesc" />
+        <meta property="og:description" content={post.content} key="ogdesc" />
         <meta property="og:type" content="article" />
       </Head>
 
