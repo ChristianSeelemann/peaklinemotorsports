@@ -32,7 +32,6 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
   const [imageName, setImageName] = useState("");
 
   const router = useRouter();
-  console.log(router.asPath);
 
   const post = posts[0];
 
