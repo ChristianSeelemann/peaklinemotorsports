@@ -105,7 +105,7 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
                   {post.drivers.map(
                     (driver: any, index: number) =>
                       driver.image && (
-                        <a style={{ zIndex: index + 50 }}>
+                        <a style={{ zIndex: index + 50 }} key={driver.id}>
                           <div className="w-12 h.-12 -ml-6 border-4 rounded-full sm:-ml-8 sm:w-14 sm:h-14 border-black/30">
                             <Image
                               src={`${process.env.NEXT_PUBLIC_API_URL}${driver.image.url}`}
