@@ -15,7 +15,7 @@ export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
   return (
     <>
       <section
-        className="absolute cursor-pointer left-0 z-[9998] flex flex-col w-screen h-full grid-cols-1 grid-rows-2 px-8 sm:px-12 py-8 bg-black/50 backdrop-blur-md"
+        className="absolute cursor-pointer left-0 z-[9998] flex flex-col w-full h-screen grid-cols-1 grid-rows-2 px-8 sm:px-12 py-8 bg-black/50 backdrop-blur-md"
         style={{ top: `${fromTop}px` }}
         onClick={() => {
           setIsModalOpen(false);
