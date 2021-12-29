@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import ReactTooltip from "react-tooltip";
 import { achievementsProps } from "../types/types";
@@ -8,6 +8,12 @@ interface Props {
 }
 
 export default function Achievement({ achievement }: Props) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   let type = "";
   switch (achievement.type) {
     case "champion_driver":
@@ -84,7 +90,12 @@ export default function Achievement({ achievement }: Props) {
       >
         <Image src={type} alt="Award Image" height={512} width={512} />
       </div>
-      <ReactTooltip multiline />
+      {isMounted && (
+        <ReactTooltip
+          multiline
+          className="!rounded-lg font-montserrat !bg-purple-700"
+        />
+      )}
     </article>
   );
 }

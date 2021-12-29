@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import ReactTooltip from "react-tooltip";
 import { CgClose } from "react-icons/cg";
@@ -12,6 +12,12 @@ interface Props {
 }
 
 export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <>
       <section
@@ -45,13 +51,15 @@ export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
       >
         <article className="flex flex-col gap-6 xl:gap-10 xl:m-auto xl:w-2/3 xl:justify-center md:flex-row">
           <section className="w-full md:min-w-[14]rem] lg:min-w-[18]rem] md:max-w-[14rem] lg:max-w-[18rem]">
-            <Image
-              src={`${process.env.NEXT_PUBLIC_API_URL}${driver.image.url}`}
-              alt={`Bild von ${driver.name}`}
-              height={driver.image.height}
-              width={driver.image.width}
-              className="rounded-lg shadow-lg bg-purple-300/10"
-            />
+            {driver.image && (
+              <Image
+                src={`${process.env.NEXT_PUBLIC_API_URL}${driver.image.url}`}
+                alt={`Bild von ${driver.name}`}
+                height={driver.image.height}
+                width={driver.image.width}
+                className="rounded-lg shadow-lg bg-purple-300/10"
+              />
+            )}
             {driver.simulations.length !== 0 && (
               <div className="items-center justify-center hidden gap-4 p-3 mt-4 rounded-lg sm:flex bg-purple-600/80">
                 {driver.simulations.map((simulation: simulationsProps) => (
@@ -177,7 +185,12 @@ export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
             )}
           </section>
         </article>
-        <ReactTooltip multiline />
+        {isMounted && (
+          <ReactTooltip
+            multiline
+            className="!rounded-lg font-montserrat !bg-purple-700"
+          />
+        )}
       </section>
     </>
   );

@@ -76,12 +76,14 @@ export default function Driver({ driver }: Props) {
           </div>
         </div>
         <div className="absolute w-full h-full">
-          <Image
-            src={`${process.env.NEXT_PUBLIC_API_URL}${driver.image.url}`}
-            alt={`Bild von ${driver.name}`}
-            layout="fill"
-            className="object-cover object-center transition-all duration-300 bg-purple-300/10"
-          />
+          {driver.image && (
+            <Image
+              src={`${process.env.NEXT_PUBLIC_API_URL}${driver.image.url}`}
+              alt={`Bild von ${driver.name}`}
+              layout="fill"
+              className="object-cover object-center transition-all duration-300 bg-purple-300/10"
+            />
+          )}
         </div>
       </article>
       {isModalOpen && (
