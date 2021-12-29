@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Mobile() {
   return (
     <>
-      <section className="absolute left-0 z-50 grid w-full px-6 pt-6 pb-4 rounded-b-lg select-none bg-background top-12 lg:hidden">
+      <section className="absolute left-0 z-[9999] grid w-full px-6 pt-6 pb-4 rounded-b-lg select-none bg-background top-12 lg:hidden">
         <ul className="grid text-lg font-bold tracking-wider uppercase font-overpass">
           <Link href="/news">
             <a>
