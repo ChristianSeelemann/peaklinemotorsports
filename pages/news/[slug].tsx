@@ -105,7 +105,7 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
         />
         <meta property="og:title" content={post.headline} key="ogtitle" />
         <meta property="og:description" content={post.content} key="ogdesc" />
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="website" />
       </Head>
 
       <Header session={session} />
