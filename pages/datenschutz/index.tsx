@@ -69,7 +69,7 @@ const Datenschutz: NextPage = () => {
             „Verantwortlicher“ verweisen wir auf die Definitionen im Art. 4 der
             Datenschutzgrundverordnung (DSGVO).
           </p>
-          <h4 className="pt-8 pb-6">Verantwortlicher</h4>
+          <h4 className="pt-8 pb-6 text-purple-600">Verantwortlicher</h4>
           <div className="mb-8">
             <p>Christian Seelemann</p>
             <p>Wiesenweg 13</p>
@@ -82,22 +82,28 @@ const Datenschutz: NextPage = () => {
               <Link href="/impressum">Link zum Impressum</Link>
             </p>
           </div>
-          <h4 className="pb-6">Arten der verarbeiteten Daten</h4>
+          <h4 className="pb-6 text-purple-600">
+            Arten der verarbeiteten Daten
+          </h4>
           <div className="mb-8">
             <p>- keine</p>
           </div>
-          <h4 className="pb-6">Kategorien betroffener Personen</h4>
+          <h4 className="pb-6 text-purple-600">
+            Kategorien betroffener Personen
+          </h4>
           <div className="mb-8">
             <p>
               Besucher und Nutzer des Onlineangebotes (Nachfolgend bezeichnen
               wir die betroffenen Personen zusammenfassend auch als „Nutzer“).
             </p>
           </div>
-          <h4 className="pb-6">Zweck der Verarbeitung</h4>
+          <h4 className="pb-6 text-purple-600">Zweck der Verarbeitung</h4>
           <div className="mb-8">
             <p>Wir verarbeiten keine Nutzerdaten.</p>
           </div>
-          <h4 className="pb-6">Einbindung von Diensten und Inhalten Dritter</h4>
+          <h4 className="pb-6 text-purple-600">
+            Einbindung von Diensten und Inhalten Dritter
+          </h4>
           <div className="mb-8">
             <p>
               Wir setzen innerhalb unseres Onlineangebotes auf Grundlage unserer
@@ -128,7 +134,7 @@ const Datenschutz: NextPage = () => {
               verbunden werden.
             </p>
           </div>
-          <h4 className="pb-6">Youtube</h4>
+          <h4 className="pb-6 text-purple-600">Youtube</h4>
           <div className="mb-8">
             <p>
               Wir binden die Videos der Plattform “YouTube” des Anbieters Google
@@ -137,7 +143,7 @@ const Datenschutz: NextPage = () => {
               Opt-Out: https://adssettings.google.com/authenticated.
             </p>
           </div>
-          <h4 className="pb-6">Google Fonts</h4>
+          <h4 className="pb-6 text-purple-600">Google Fonts</h4>
           <div className="mb-2">
             <p>
               Wir binden die Schriftarten („Google Fonts“) des Anbieters Google
