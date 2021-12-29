@@ -47,7 +47,7 @@ export default function Lightbox({
       </section>
       <div
         className="absolute left-0 mx-12 z-[9999] overflow-hidden rounded-lg"
-        style={{ top: `${fromTop + 128}px` }}
+        style={{ top: `${fromTop + 128}px`, maxHeight: `calc(100vh - 188px)` }}
       >
         <Image
           src={`${process.env.NEXT_PUBLIC_API_URL}${url}`}
