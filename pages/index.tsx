@@ -101,13 +101,13 @@ const Home: NextPage = ({
               <p className="pr-2 mt-[0.225rem] text-sm font-bold uppercase font-overpass tracking-widest transition-all duration-300 select-none">
                 Alle News
               </p>
-              <span className="-mr-2 group-hover:text-purple-800">
+              <span className="-mr-2 group-hover:text-violet-800">
                 <FaChevronRight />
               </span>
-              <span className="-mr-2 transition-all duration-300 text-white/60 group-hover:text-purple-800/60">
+              <span className="-mr-2 transition-all duration-300 text-white/60 group-hover:text-violet-800/60">
                 <FaChevronRight />
               </span>
-              <span className="-mr-2 transition-all duration-300 text-white/40 group-hover:text-purple-800/40">
+              <span className="-mr-2 transition-all duration-300 text-white/40 group-hover:text-violet-800/40">
                 <FaChevronRight />
               </span>
             </a>

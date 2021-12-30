@@ -21,7 +21,7 @@ export default function Event({ event }: props) {
           <span className="text-xl font-bold sm:text-lg md:text-xl">
             {event.track}
           </span>
-          <span className="text-purple-200/70">{event.competition.title}</span>
+          <span className="text-violet-200/80">{event.competition.title}</span>
         </div>
         <div className="w-16 mt-3">
           {event.simulation.logo && (
@@ -37,7 +37,7 @@ export default function Event({ event }: props) {
           )}
         </div>
       </div>
-      <div className="absolute w-full h-full bg-gradient-to-l from-purple-700 to-purple-900/70">
+      <div className="absolute w-full h-full bg-gradient-to-l from-violet-500 to-violet-800/70">
         {event.competition.thumbnail && (
           <Image
             src={`https://strapi.peaklinems.de${event.competition.thumbnail.formats.thumbnail.url}`}

@@ -28,7 +28,7 @@ export default function Calendar({ events }: props) {
               <span className="hidden pr-4 sm:flex">Kommende</span> Events
             </div>
           </h3>
-          <div className="-mt-2 text-xl font-bold tracking-wider text-center text-purple-600 uppercase font-montserrat">
+          <div className="-mt-2 text-xl font-bold tracking-wider text-center uppercase text-violet-500 font-montserrat">
             #GoPeakline
           </div>
         </section>

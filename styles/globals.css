@@ -9,7 +9,7 @@
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #7b00eed3 transparent;
+  scrollbar-color: #6d28d9 transparent;
 }
 
 *::-webkit-scrollbar {
@@ -21,13 +21,13 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #7b00eed3;
+  background-color: #6d28d9;
   border-radius: 0.5rem;
   border: 0px none #ffffff;
 }
 
 .editor a {
-  @apply text-purple-400;
+  @apply text-violet-700;
 }
 
 html,
@@ -82,20 +82,20 @@ h5 {
 }
 
 .navigation__item:hover {
-  background: rgba(158, 40, 255, 0.1);
+  background: rgba(107, 38, 217, 0.05);
   background: -moz-radial-gradient(
     circle,
-    rgba(158, 40, 255, 0.1) 20%,
+    rgba(107, 38, 217, 0.05) 20%,
     rgba(12, 17, 22, 1) 90%
   );
   background: -webkit-radial-gradient(
     circle,
-    rgba(158, 40, 255, 0.1) 20%,
+    rgba(107, 38, 217, 0.05) 20%,
     rgba(12, 17, 22, 1) 90%
   );
   background: radial-gradient(
     circle,
-    rgba(158, 40, 255, 0.1) 20%,
+    rgba(107, 38, 217, 0.05) 20%,
     rgba(12, 17, 22, 1) 90%
   );
 }
@@ -110,7 +110,7 @@ h5 {
 }
 
 .navigation__item:hover::after {
-  background: rgba(158, 40, 255, 0.75);
+  background: #6b26d9;
 }
 
 .navigation__item_footer::after {
@@ -123,24 +123,24 @@ h5 {
 }
 
 .navigation__item_footer:hover::after {
-  background: rgba(158, 40, 255, 0.75);
+  background: #6b26d9;
 }
 
 .navigation__item_active {
-  background: rgba(158, 40, 255, 0.1);
+  background: rgba(107, 38, 217, 0.05);
   background: -moz-radial-gradient(
     circle,
-    rgba(158, 40, 255, 0.1) 20%,
+    rgba(107, 38, 217, 0.05) 20%,
     rgba(12, 17, 22, 1) 90%
   );
   background: -webkit-radial-gradient(
     circle,
-    rgba(158, 40, 255, 0.1) 20%,
+    rgba(107, 38, 217, 0.05) 20%,
     rgba(12, 17, 22, 1) 90%
   );
   background: radial-gradient(
     circle,
-    rgba(158, 40, 255, 0.1) 20%,
+    rgba(107, 38, 217, 0.05) 20%,
     rgba(12, 17, 22, 1) 90%
   );
 }
@@ -155,7 +155,7 @@ h5 {
 }
 
 .navigation__item_active::after {
-  background: rgba(158, 40, 255, 0.75);
+  background: #6b26d9;
 }
 
 /* Make clicks pass-through */
@@ -164,7 +164,7 @@ h5 {
 }
 
 #nprogress .bar {
-  background: #7b23c7;
+  background: #6b26d9;
 
   position: fixed;
   z-index: 1031;
@@ -182,7 +182,7 @@ h5 {
   right: 0px;
   width: 100px;
   height: 100%;
-  box-shadow: 0 0 10px #7b23c7, 0 0 5px #7b23c7;
+  box-shadow: 0 0 10px #6b26d9, 0 0 5px #6b26d9;
   opacity: 1;
 
   -webkit-transform: rotate(3deg) translate(0px, -4px);

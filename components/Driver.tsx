@@ -72,7 +72,7 @@ export default function Driver({ driver }: Props) {
             <span className="text-4xl font-bold font-overpass">
               {driver.name}
             </span>
-            <span className="px-3 pt-2 pb-1 mt-3 text-sm rounded-md shadow-lg bg-purple-700/80 w-fit font-overpass">
+            <span className="px-3 pt-2 pb-1 mt-3 text-sm rounded-md shadow-lg bg-gradient-to-r from-violet-800/90 to-violet-600/90 w-fit font-overpass">
               {driver.position ? driver.position : "Fahrer"}
             </span>
           </div>
@@ -84,7 +84,7 @@ export default function Driver({ driver }: Props) {
               alt={`Bild von ${driver.name}`}
               layout="fill"
               priority
-              className="object-cover object-center transition-all duration-300 bg-purple-300/10"
+              className="object-cover object-center transition-all duration-300 bg-violet-300/10"
             />
           )}
         </div>

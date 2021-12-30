@@ -77,8 +77,8 @@ export default function Navigation() {
               >
                 <span>We want you!</span>
                 <span className="absolute right-0 flex w-3 h-3 top-4">
-                  <span className="absolute inline-flex w-full h-full bg-purple-600 rounded-full opacity-75 animate-ping"></span>
-                  <span className="relative inline-flex w-3 h-3 bg-purple-700 rounded-full"></span>
+                  <span className="absolute inline-flex w-full h-full rounded-full opacity-75 bg-violet-600 animate-ping"></span>
+                  <span className="relative inline-flex w-3 h-3 rounded-full bg-violet-700"></span>
                 </span>
               </li>
             </a>
@@ -90,13 +90,13 @@ export default function Navigation() {
         >
           {!menuOpen ? (
             <li className="grid gap-[0.35rem]">
-              <span className="w-6 h-[0.1rem] justify-self-center rounded bg-white group-hover:bg-purple-600 transition-all duration-300"></span>
-              <span className="w-8 h-[0.1rem] justify-self-center rounded bg-white/70 group-hover:bg-purple-600/80 transition-all duration-300"></span>
-              <span className="w-5 h-[0.1rem] justify-self-center rounded bg-white/40 group-hover:bg-purple-600/60 transition-all duration-300"></span>
+              <span className="w-6 h-[0.1rem] justify-self-center rounded bg-white group-hover:bg-violet-600 transition-all duration-300"></span>
+              <span className="w-8 h-[0.1rem] justify-self-center rounded bg-white/70 group-hover:bg-violet-600/80 transition-all duration-300"></span>
+              <span className="w-5 h-[0.1rem] justify-self-center rounded bg-white/40 group-hover:bg-violet-600/60 transition-all duration-300"></span>
             </li>
           ) : (
             <li className="grid gap-[0.35rem]">
-              <CgClose className="w-8 h-8 transition-all duration-300 group-hover:text-purple-600" />
+              <CgClose className="w-8 h-8 transition-all duration-300 group-hover:text-violet-600" />
             </li>
           )}
         </section>

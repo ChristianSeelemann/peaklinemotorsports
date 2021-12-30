@@ -58,11 +58,11 @@ export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
                 height={driver.image.height}
                 width={driver.image.width}
                 priority
-                className="rounded-lg shadow-lg bg-purple-300/10"
+                className="rounded-lg shadow-lg bg-violet-300/10"
               />
             )}
             {driver.simulations.length !== 0 && (
-              <div className="items-center justify-center hidden gap-4 p-3 mt-4 rounded-lg sm:flex bg-purple-600/80">
+              <div className="items-center justify-center hidden gap-3 p-2 mt-4 rounded-lg sm:flex bg-gradient-to-l from-violet-500/80 to-violet-700/80">
                 {driver.simulations.map((simulation: simulationsProps) => (
                   <div
                     key={simulation.id}
@@ -112,7 +112,7 @@ export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
             </div>
             {driver.content && (
               <div
-                className="mt-6 text-lg leading-7 whitespace-pre-wrap text-purple-100/90 font-overpass editor"
+                className="mt-6 text-lg leading-7 whitespace-pre-wrap text-violet-100/90 font-overpass editor"
                 dangerouslySetInnerHTML={{ __html: driver.content }}
               />
             )}
@@ -173,7 +173,7 @@ export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
                     <div
                       key={award.id}
                       data-tip={`${typeText}<br />${award.competition}`}
-                      className="cursor-pointer w-14"
+                      className="w-12 cursor-pointer"
                     >
                       <Image
                         src={type}
@@ -192,7 +192,8 @@ export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
         {isMounted && (
           <ReactTooltip
             multiline
-            className="!rounded-lg font-montserrat !bg-purple-700"
+            arrowColor="transparent"
+            className="!rounded-lg font-montserrat !bg-violet-700 !px-2 !py-0"
           />
         )}
       </section>

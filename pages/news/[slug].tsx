@@ -121,7 +121,7 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
                 priority
                 width={post.thumbnail.formats.large.width}
                 height={post.thumbnail.formats.large.height}
-                className="lg:shadow-lg lg:rounded-lg bg-purple-300/10"
+                className="lg:shadow-lg lg:rounded-lg bg-violet-300/10"
               />
               {post.drivers.length !== 0 && (
                 <div className="absolute z-10 flex top-2 sm:top-4 right-4 sm:right-8 lg:right-4">
@@ -146,7 +146,7 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
                 </div>
               )}
               <section className="relative flex justify-between px-2 sm:px-8 lg:px-0 lg:w-full lg:grid -top-[5.5rem] sm:-top-24 lg:top-2 lg:gap-2">
-                <div className="flex items-center gap-4 px-3 sm:px-4 py-2 text-sm rounded-lg shadow-md lg:w-[20rem] bg-background lg:bg-gradient-to-r lg:from-purple-500/80 lg:to-purple-700/80 text-purple-100/90">
+                <div className="flex items-center gap-4 px-3 sm:px-4 py-2 text-sm rounded-lg shadow-md lg:w-[20rem] bg-background lg:bg-gradient-to-r lg:from-violet-800/80 lg:to-violet-600/80 text-violet-100/90">
                   {post.simulation.logo && post.simulation.logo.url && (
                     <div className="block w-6">
                       <Image
@@ -165,7 +165,7 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
                   <div className="mt-1">{post.competitions[0].title}</div>
                 </div>
                 {post.authors.length !== 0 && (
-                  <div className="items-center hidden gap-2 px-4 py-2 text-sm rounded-lg shadow-md sm:flex bg-background lg:bg-purple-600/80 text-purple-100/90">
+                  <div className="items-center hidden gap-2 px-4 py-2 text-sm rounded-lg shadow-md sm:flex bg-background lg:bg-gradient-to-r lg:from-violet-800/80 lg:to-violet-600/80 text-violet-100/90">
                     <HiPencil className="text-2xl" />
                     <span className="mt-1">
                       {post.authors.length > 1
@@ -179,9 +179,9 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
               </section>
             </div>
           )}
-          <section className="relative px-6 pt-6 pb-8 -mt-20 border-b-2 bg-background rounded-2xl lg:-mt-0 border-b-purple-600/20">
+          <section className="relative px-6 pt-6 pb-8 -mt-20 border-b-2 bg-background rounded-2xl lg:-mt-0 border-b-violet-700/50">
             <div
-              className="text-lg leading-7 whitespace-pre-wrap text-purple-100/90 font-overpass editor"
+              className="text-lg leading-7 whitespace-pre-wrap text-violet-100/90 font-overpass editor"
               dangerouslySetInnerHTML={{ __html: post.content }}
             ></div>
 
@@ -234,7 +234,7 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
                           ? image.formats.medium.width
                           : image.width
                       }
-                      className="rounded-md shadow-md bg-purple-300/10"
+                      className="rounded-md shadow-md bg-violet-300/10"
                     />
                   </div>
                 ))}

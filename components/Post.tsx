@@ -9,7 +9,7 @@ export default function Post({ post }: { post: postsProps }) {
       <a>
         <article className="relative grid content-end h-64 gap-2 px-4 py-4 overflow-hidden rounded-lg shadow-md select-none sm:py-6 group shadow-purple-900/10 sm:px-7">
           <div className="z-40">
-            <div className="mb-1 text-xs font-bold uppercase transition-all duration-300 text-purple-300/90 group-hover:text-purple-200/70 font-montserrat">
+            <div className="mb-1 text-xs font-bold uppercase transition-all duration-300 text-violet-300/90 group-hover:text-violet-300/70 font-montserrat">
               {post.competitions
                 .map((competition: competitionsProps) => competition.title)
                 .join(", ")}
@@ -32,7 +32,7 @@ export default function Post({ post }: { post: postsProps }) {
               )}
             </div>
           </div>
-          <div className="absolute w-full h-full transition-all duration-300 bg-gradient-to-b from-purple-500 to-purple-800">
+          <div className="absolute w-full h-full transition-all duration-300 bg-gradient-to-b from-violet-600 to-violet-900">
             <Image
               src={`https://strapi.peaklinems.de${
                 post.thumbnail.formats.medium

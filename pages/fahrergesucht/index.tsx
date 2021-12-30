@@ -88,25 +88,25 @@ const Fahrergesucht: NextPage = () => {
         />
 
         <section className="flex flex-col justify-between gap-4 mx-6 mt-8 xl:gap-6 lg:flex-row sm:mx-8 lg:mx-16 2xl:gap-8">
-          <div className="w-full gap-5 px-6 py-5 border-b-2 bg-background border-purple-600/20 rounded-2xl h-fit">
+          <div className="w-full gap-5 px-6 py-5 border-b-2 bg-background border-violet-700/50 rounded-2xl h-fit">
             <div className="grid gap-6">
-              <h4 className="mb-2 text-purple-600">
+              <h4 className="mb-2 text-violet-600">
                 Warum wir zusammen passen?
               </h4>
-              <h5 className="mt-2 text-base text-purple-400">
+              <h5 className="mt-2 text-base text-violet-400">
                 Welche Sim fahren wir?
               </h5>
-              <p className="text-lg leading-7 whitespace-pre-wrap text-purple-100/90 font-overpass editor">
+              <p className="text-lg leading-7 whitespace-pre-wrap text-violet-100/90 font-overpass editor">
                 Im Gegensatz zu vielen anderen Teams sind wir nicht auf eine
                 feste Simulation festgelegt. Während wir aktuell in iRacing,
                 Assetto Corsa, Raceroom und Dirt 2.0 untwegs sind, sind wir
                 stets offen für Fahrer, welche ihre Leidenschaft für eine andere
                 Simulation entwickelt haben.
               </p>
-              <h5 className="mt-2 text-base text-purple-400">
+              <h5 className="mt-2 text-base text-violet-400">
                 Was erwarten wir?
               </h5>
-              <p className="text-lg leading-7 whitespace-pre-wrap text-purple-100/90 font-overpass editor">
+              <p className="text-lg leading-7 whitespace-pre-wrap text-violet-100/90 font-overpass editor">
                 Unser Team besteht aus Fahrern aus den verschiedensten
                 Bereichen. Während manche schon Titel sammeln konnten fühlen
                 sich auch Rookies oder Gentleman bei uns sehr wohl.
@@ -121,10 +121,10 @@ const Fahrergesucht: NextPage = () => {
                 Oval-Junkie, Querfahrer oder Staubatmer. Bei uns findet jeder
                 ein Zuhause in familiärer Umgebung.
               </p>
-              <h5 className="mt-2 text-base text-purple-400">
+              <h5 className="mt-2 text-base text-violet-400">
                 Du bist auf der Suche?
               </h5>
-              <p className="text-lg leading-7 whitespace-pre-wrap text-purple-100/90 font-overpass editor">
+              <p className="text-lg leading-7 whitespace-pre-wrap text-violet-100/90 font-overpass editor">
                 Egal ob du alleine suchst oder in einem kleinen Team eine neue
                 Heimat. Besuch uns einfach auf unserem Discord und quatsch uns
                 an.
@@ -132,11 +132,11 @@ const Fahrergesucht: NextPage = () => {
             </div>
           </div>
           <aside className="select-none">
-            <div className="w-full px-6 mt-8 lg:mt-0 sm:mt-10 py-5 border-b-2 bg-background border-purple-600/20 rounded-2xl lg:w-[18.5rem] xl:w-[35rem]">
-              <h4 className="text-purple-600">
+            <div className="w-full px-6 mt-8 lg:mt-0 sm:mt-10 py-5 border-b-2 bg-background border-violet-700/50 rounded-2xl lg:w-[18.5rem] xl:w-[35rem]">
+              <h4 className="text-violet-600">
                 Du willst ein Teil des Teams werden?
               </h4>
-              <p className="mt-6 text-lg leading-7 whitespace-pre-wrap text-purple-100/90 font-overpass editor">
+              <p className="mt-6 text-lg leading-7 whitespace-pre-wrap text-violet-100/90 font-overpass editor">
                 Egal ob Rookie oder Profi. Egal ob Rundstrecke, Oval oder
                 Schotter. Bei den violetten Pfeilen findet jeder Mensch mit
                 Passion für den virtuellen Motorsport ein Zuhause. Gespickt mit
@@ -145,7 +145,7 @@ const Fahrergesucht: NextPage = () => {
               </p>
               <Link href="https://discord.gg/hgwdXYM">
                 <a target="_blank" className="group">
-                  <span className="flex items-center gap-3 mt-8 text-lg font-bold leading-7 text-purple-100/90 font-overpass">
+                  <span className="flex items-center gap-3 mt-8 text-lg font-bold leading-7 text-violet-100/90 font-overpass">
                     <FaDiscord className="-mt-1 text-4xl" />
                     Join unserem Discord
                   </span>

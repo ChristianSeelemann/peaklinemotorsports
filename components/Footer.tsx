@@ -24,7 +24,7 @@ export default function Footer() {
         </div>
       </section>
       <div className="h-8 mb-6 text-center">
-        <ul className="flex justify-center gap-4 select-none sm:gap-6 text-purple-300/90 text-smfont-overpass">
+        <ul className="flex justify-center gap-4 select-none sm:gap-6 text-violet-300/90 text-smfont-overpass">
           <Link href="mailto:info@peaklinems.de">
             <a className="navigation__item_footer">
               <li>Kontakt</li>
@@ -61,7 +61,7 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <div className="text-xs text-center select-none text-purple-300/70 font-overpass">
+      <div className="text-xs text-center select-none text-violet-300/70 font-overpass">
         Copyright © {year} Peakline Motorsports. Designed and built by
         <Link href="https://www.peakline.de/">
           <a> Peakline.de</a>

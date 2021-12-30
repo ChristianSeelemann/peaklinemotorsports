@@ -18,7 +18,7 @@ export default function Headline({ headline, subheading }: Props) {
         {headline}
       </h1>
       {subheading && (
-        <h2 className="text-sm sm:text-base leading-[2rem] sm:leading-[2.5rem] font-normal font-montserrat text-purple-600">
+        <h2 className="text-sm sm:text-base leading-[2rem] sm:leading-[2.5rem] font-normal font-montserrat text-violet-600">
           {subheading}
         </h2>
       )}

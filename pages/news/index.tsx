@@ -132,7 +132,7 @@ const News: NextPage = ({
                 {Number(activePage) - 2 > 0 && (
                   <Link href={`/news?page=${Number(activePage) - 2}`}>
                     <a>
-                      <li className="px-3 pt-2 pb-1 rounded-md shadow-md bg-purple-600/20">
+                      <li className="px-3 pt-2 pb-1 rounded-md shadow-md bg-violet-600/20">
                         {Number(activePage) - 2}
                       </li>
                     </a>
@@ -141,7 +141,7 @@ const News: NextPage = ({
                 {Number(activePage) - 1 > 0 && (
                   <Link href={`/news?page=${Number(activePage) - 1}`}>
                     <a>
-                      <li className="px-3 pt-2 pb-1 rounded-md shadow-md bg-purple-600/40">
+                      <li className="px-3 pt-2 pb-1 rounded-md shadow-md bg-violet-600/40">
                         {Number(activePage) - 1}
                       </li>
                     </a>
@@ -149,7 +149,7 @@ const News: NextPage = ({
                 )}
                 <Link href={`/news?page=${activePage}`}>
                   <a>
-                    <li className="px-3 pt-2 pb-1 rounded-md shadow-md bg-purple-600/70">
+                    <li className="px-3 pt-2 pb-1 rounded-md shadow-md bg-violet-600/70">
                       {activePage}
                     </li>
                   </a>
@@ -157,7 +157,7 @@ const News: NextPage = ({
                 {Number(activePage) + 1 <= siteCount && (
                   <Link href={`/news?page=${Number(activePage) + 1}`}>
                     <a>
-                      <li className="px-3 pt-2 pb-1 rounded-md shadow-md bg-purple-600/40">
+                      <li className="px-3 pt-2 pb-1 rounded-md shadow-md bg-violet-600/40">
                         {Number(activePage) + 1}
                       </li>
                     </a>
@@ -166,7 +166,7 @@ const News: NextPage = ({
                 {Number(activePage) + 2 <= siteCount && (
                   <Link href={`/news?page=${Number(activePage) + 2}`}>
                     <a>
-                      <li className="px-3 pt-2 pb-1 rounded-md shadow-md bg-purple-600/20">
+                      <li className="px-3 pt-2 pb-1 rounded-md shadow-md bg-violet-600/20">
                         {Number(activePage) + 2}
                       </li>
                     </a>

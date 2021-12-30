@@ -81,25 +81,25 @@ const Impressum: NextPage = () => {
       <main>
         <Headline headline="Impressum" />
 
-        <section className="px-6 py-5 mx-6 mt-8 text-lg leading-7 break-words border-b-2 border-purple-600/20 sm:mx-8 lg:mx-16 rounded-2xl text-purple-100/90 font-overpass editor bg-background">
+        <section className="px-6 py-5 mx-6 mt-8 text-lg leading-7 break-words border-b-2 border-violet-600/20 sm:mx-8 lg:mx-16 rounded-2xl text-violet-100/90 font-overpass editor bg-background">
           <div className="mb-8">
-            <h4 className="pb-6 text-purple-600">Angaben gemäß § 5 TMG</h4>
+            <h4 className="pb-6 text-violet-600">Angaben gemäß § 5 TMG</h4>
             <p>Christian Seelemann</p>
             <p>Wiesenweg 13</p>
             <p>21423 Winsen (Luhe)</p>
           </div>
           <div className="mb-8">
-            <h4 className="pb-6 text-purple-600">Kontakt</h4>
+            <h4 className="pb-6 text-violet-600">Kontakt</h4>
             <p>E-Mail: info[at]peaklinems.de</p>
           </div>
           <div className="mb-8">
-            <h4 className="pb-6 text-purple-600">
+            <h4 className="pb-6 text-violet-600">
               Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
             </h4>
             <p>Christian Seelemann</p>
           </div>
           <div className="mb-2">
-            <h4 className="pb-6 text-purple-600">
+            <h4 className="pb-6 text-violet-600">
               Ansprechpartner für Sponsoren- Werbung- und
               Affiliateangelegenheiten
             </h4>

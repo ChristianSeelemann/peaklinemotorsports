@@ -150,7 +150,7 @@ const Gallerie: NextPage = ({ session, fetchedData: posts }: any) => {
                           ? image.formats.medium.width
                           : image.width
                       }
-                      className="rounded-md shadow-lg bg-purple-300/10 lg:rounded-xl"
+                      className="rounded-md shadow-lg bg-violet-300/10 lg:rounded-xl"
                     />
                   </div>
                 ))

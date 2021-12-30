@@ -89,9 +89,9 @@ const Erfolge: NextPage = ({ session, fetchedData: achievements }: any) => {
         />
 
         <section className="flex flex-col mx-6 mt-8 xl:flex-row-reverse sm:mx-8 lg:mx-16 rounded-2xl font-overpass">
-          <aside className="w-full xl:max-w-[20rem] xl:min-w-[20rem] mb-12 xl:ml-12 xl:mb-0">
-            <div className="px-6 py-5 border-b-2 bg-background border-purple-600/20 rounded-2xl">
-              <p className="text-lg leading-7 whitespace-pre-wrap text-purple-100/90 font-overpass editor">
+          <aside className="w-full xl:max-w-[20rem] xl:min-w-[20rem] mb-12 xl:ml-12 xl:mb-0 2xl:max-w-[30rem] 2xl:min-w-[30rem]">
+            <div className="px-6 py-5 border-b-2 bg-background border-violet-700/50 rounded-2xl">
+              <p className="text-lg leading-7 whitespace-pre-wrap text-violet-100/90 font-overpass editor">
                 Seit mittlerweile über einem Jahrzehnt machen die violetten
                 Pfeile die virtuellen Rennstrecken der Welt unsicher. Egal ob
                 Rundkurs, Oval oder Rally, vor uns ist kein Event sicher. Wir
@@ -103,7 +103,7 @@ const Erfolge: NextPage = ({ session, fetchedData: achievements }: any) => {
           {achievements.length === 0 ? (
             <div className="w-full">Kein Erfolg gefunden.</div>
           ) : (
-            <div className="w-full">
+            <div className="grid w-full gap-1">
               {achievements.map((achievement: achievementsProps) => (
                 <div key={achievement.id}>
                   <Achievement achievement={achievement} />

@@ -14,7 +14,7 @@ export default function Sponsors() {
               width={310}
               height={90}
             />
-            <div className="p-2 mt-3 text-sm font-bold rounded-md text-purple-400/80 font-montserrat bg-gradient-to-r from-purple-500/10 to-purple-700/10">
+            <div className="p-2 mt-3 text-sm rounded-md text-violet-300/80 font-montserrat bg-gradient-to-r from-violet-500/20 to-violet-500/10">
               Hauptsponsor
             </div>
           </a>
@@ -29,7 +29,7 @@ export default function Sponsors() {
               height={180}
               width={310}
             />
-            <div className="p-2 mt-2 text-sm font-bold rounded-md text-purple-400/80 font-montserrat bg-gradient-to-r from-purple-500/10 to-purple-700/10">
+            <div className="p-2 mt-2 text-sm rounded-md text-violet-300/80 font-montserrat bg-gradient-to-r from-violet-500/20 to-violet-500/10">
               Friends
             </div>
           </a>
@@ -44,7 +44,7 @@ export default function Sponsors() {
               width={310}
               height={180}
             />
-            <div className="p-2 mt-2 text-sm font-bold rounded-md text-purple-400/80 font-montserrat bg-gradient-to-r from-purple-500/10 to-purple-700/10">
+            <div className="p-2 mt-2 text-sm rounded-md text-violet-300/80 font-montserrat bg-gradient-to-r from-violet-500/20 to-violet-500/10">
               Friends
             </div>
           </a>
