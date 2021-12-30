@@ -42,7 +42,7 @@ body {
 html {
   background-color: var(--color-background);
   color: var(--color-font);
-  background-image: url("/background.jpg");
+  background-image: url("/background.webp");
   background-position: right top;
   background-repeat: no-repeat;
 }
