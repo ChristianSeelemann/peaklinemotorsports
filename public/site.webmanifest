@@ -1,19 +1,19 @@
 {
-    "name": "Peakline Motorsports",
-    "short_name": "Peakline Motorsports",
-    "icons": [
-        {
-            "src": "/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/android-chrome-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#8d00ff",
-    "background_color": "#8d00ff",
-    "display": "standalone"
+  "name": "Peakline Motorsports",
+  "short_name": "Peakline Motorsports",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#6d28d9",
+  "background_color": "#6d28d9",
+  "display": "standalone"
 }
