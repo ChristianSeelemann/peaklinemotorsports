@@ -94,7 +94,7 @@ const Fahrergesucht: NextPage = () => {
               <h5 className="text-base text-purple-400">
                 Welche Sim fahren wir?
               </h5>
-              <p>
+              <p className="mt-6 text-lg leading-7 whitespace-pre-wrap text-purple-100/90 font-overpass editor">
                 Im Gegensatz zu vielen anderen Teams sind wir nicht auf eine
                 feste Simulation festgelegt. Während wir aktuell in iRacing,
                 Assetto Corsa, Raceroom und Dirt 2.0 untwegs sind, sind wir
@@ -102,7 +102,7 @@ const Fahrergesucht: NextPage = () => {
                 Simulation entwickelt haben.
               </p>
               <h5 className="text-base text-purple-400">Was erwarten wir?</h5>
-              <p>
+              <p className="mt-6 text-lg leading-7 whitespace-pre-wrap text-purple-100/90 font-overpass editor">
                 Unser Team besteht aus Fahrern aus den verschiedensten
                 Bereichen. Während manche schon Titel sammeln konnten fühlen
                 sich auch Rookies oder Gentleman bei uns sehr wohl.
@@ -120,7 +120,7 @@ const Fahrergesucht: NextPage = () => {
               <h5 className="text-base text-purple-400">
                 Du bist auf der Suche?
               </h5>
-              <p>
+              <p className="mt-6 text-lg leading-7 whitespace-pre-wrap text-purple-100/90 font-overpass editor">
                 Egal ob du alleine suchst oder in einem kleinen Team eine neue
                 Heimat. Besuch uns einfach auf unserem Discord und quatsch uns
                 an.
@@ -128,7 +128,7 @@ const Fahrergesucht: NextPage = () => {
             </div>
           </div>
           <aside className="select-none">
-            <div className="w-full px-6 mt-8 lg:mt-0 sm:mt-10 py-5 border-b-2 bg-background border-purple-600/20 rounded-2xl lg:w-[18.5rem] 2xl:w-[21rem]">
+            <div className="w-full px-6 mt-8 lg:mt-0 sm:mt-10 py-5 border-b-2 bg-background border-purple-600/20 rounded-2xl lg:w-[18.5rem] xl:w-[35rem]">
               <h4 className="text-purple-600">
                 Du willst ein Teil des Teams werden?
               </h4>
