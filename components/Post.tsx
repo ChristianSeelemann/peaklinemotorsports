@@ -23,6 +23,7 @@ export default function Post({ post }: { post: postsProps }) {
                     alt="Simulation Logo"
                     height={post.simulation.logo.height}
                     width={post.simulation.logo.width}
+                    priority
                     className={`brightness-0 invert shadow-lg ${
                       post.simulation.slug === "iracing" && "rounded-md"
                     }`}
@@ -40,6 +41,7 @@ export default function Post({ post }: { post: postsProps }) {
               } `}
               alt={post.thumbnail.name}
               layout="fill"
+              priority
               className="object-cover object-center w-full h-full opacity-90 brightness-[0.5] group-hover:opacity-40 transition-all duration-300"
             />
           </div>

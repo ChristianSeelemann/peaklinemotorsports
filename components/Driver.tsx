@@ -40,6 +40,7 @@ export default function Driver({ driver }: Props) {
                       alt={`${simulation.title} Logo`}
                       width={simulation.logo.width}
                       height={simulation.logo.height}
+                      priority
                       className={`brightness-0 invert ${
                         simulation.slug === "iracing" && "rounded-sm"
                       }`}
@@ -56,6 +57,7 @@ export default function Driver({ driver }: Props) {
                         src={`https://strapi.peaklinems.de${driver.nationality.url}`}
                         alt="Flagge"
                         width={driver.nationality.width}
+                        priority
                         height={driver.nationality.height}
                         className="rounded-md shadow-lg"
                       />
@@ -81,6 +83,7 @@ export default function Driver({ driver }: Props) {
               src={`https://strapi.peaklinems.de${driver.image.url}`}
               alt={`Bild von ${driver.name}`}
               layout="fill"
+              priority
               className="object-cover object-center transition-all duration-300 bg-purple-300/10"
             />
           )}

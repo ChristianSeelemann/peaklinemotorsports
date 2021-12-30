@@ -88,7 +88,7 @@ export default function Achievement({ achievement }: Props) {
         data-tip={`${typeText}<br />${achievement.competition}`}
         className="grid w-12 m-3 mr-4 cursor-pointer sm:w-14 justify-self-end place-self-center"
       >
-        <Image src={type} alt="Award Image" height={512} width={512} />
+        <Image src={type} alt="Award Image" height={512} width={512} priority />
       </div>
       {isMounted && (
         <ReactTooltip

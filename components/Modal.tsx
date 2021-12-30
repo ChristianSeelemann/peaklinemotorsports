@@ -57,6 +57,7 @@ export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
                 alt={`Bild von ${driver.name}`}
                 height={driver.image.height}
                 width={driver.image.width}
+                priority
                 className="rounded-lg shadow-lg bg-purple-300/10"
               />
             )}
@@ -73,6 +74,7 @@ export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
                       height={simulation.logo.height}
                       width={simulation.logo.width}
                       layout="responsive"
+                      priority
                       className={`brightness-0 invert ${
                         simulation.slug === "iracing" && "rounded-sm"
                       }`}
@@ -90,6 +92,7 @@ export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
                   alt={`Bild von ${driver.nationality}`}
                   height={driver.nationality.height}
                   width={driver.nationality.width}
+                  priority
                   className="rounded-lg shadow-lg"
                 />
               </span>
@@ -177,6 +180,7 @@ export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
                         alt="Award Image"
                         height={512}
                         width={512}
+                        priority
                       />
                     </div>
                   );
