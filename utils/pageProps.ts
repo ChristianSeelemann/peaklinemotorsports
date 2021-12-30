@@ -192,7 +192,7 @@ export default async function pageProps(
   const tokenData: any = await token.json();
 
   const streams = await fetch(
-    "https://api.twitch.tv/helix/streams?user_login=peaklinems&user_login=raven2k3&user_login=sitalia&user_login=wirtual",
+    "https://api.twitch.tv/helix/streams?user_login=peaklinems&user_login=raven2k3&user_login=sitalia",
     {
       headers: {
         Authorization: `Bearer ${tokenData.access_token}`,
