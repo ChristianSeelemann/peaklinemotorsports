@@ -90,19 +90,23 @@ const Fahrergesucht: NextPage = () => {
         <section className="flex flex-col justify-between gap-4 mx-6 mt-8 xl:gap-6 lg:flex-row sm:mx-8 lg:mx-16 2xl:gap-8">
           <div className="w-full gap-5 px-6 py-5 border-b-2 bg-background border-purple-600/20 rounded-2xl h-fit">
             <div className="grid gap-6">
-              <h4 className="text-purple-600">Warum wir zusammen passen?</h4>
-              <h5 className="text-base text-purple-400">
+              <h4 className="mb-2 text-purple-600">
+                Warum wir zusammen passen?
+              </h4>
+              <h5 className="mt-2 text-base text-purple-400">
                 Welche Sim fahren wir?
               </h5>
-              <p className="mt-6 text-lg leading-7 whitespace-pre-wrap text-purple-100/90 font-overpass editor">
+              <p className="text-lg leading-7 whitespace-pre-wrap text-purple-100/90 font-overpass editor">
                 Im Gegensatz zu vielen anderen Teams sind wir nicht auf eine
                 feste Simulation festgelegt. Während wir aktuell in iRacing,
                 Assetto Corsa, Raceroom und Dirt 2.0 untwegs sind, sind wir
                 stets offen für Fahrer, welche ihre Leidenschaft für eine andere
                 Simulation entwickelt haben.
               </p>
-              <h5 className="text-base text-purple-400">Was erwarten wir?</h5>
-              <p className="mt-6 text-lg leading-7 whitespace-pre-wrap text-purple-100/90 font-overpass editor">
+              <h5 className="mt-2 text-base text-purple-400">
+                Was erwarten wir?
+              </h5>
+              <p className="text-lg leading-7 whitespace-pre-wrap text-purple-100/90 font-overpass editor">
                 Unser Team besteht aus Fahrern aus den verschiedensten
                 Bereichen. Während manche schon Titel sammeln konnten fühlen
                 sich auch Rookies oder Gentleman bei uns sehr wohl.
@@ -117,10 +121,10 @@ const Fahrergesucht: NextPage = () => {
                 Oval-Junkie, Querfahrer oder Staubatmer. Bei uns findet jeder
                 ein Zuhause in familiärer Umgebung.
               </p>
-              <h5 className="text-base text-purple-400">
+              <h5 className="mt-2 text-base text-purple-400">
                 Du bist auf der Suche?
               </h5>
-              <p className="mt-6 text-lg leading-7 whitespace-pre-wrap text-purple-100/90 font-overpass editor">
+              <p className="text-lg leading-7 whitespace-pre-wrap text-purple-100/90 font-overpass editor">
                 Egal ob du alleine suchst oder in einem kleinen Team eine neue
                 Heimat. Besuch uns einfach auf unserem Discord und quatsch uns
                 an.
