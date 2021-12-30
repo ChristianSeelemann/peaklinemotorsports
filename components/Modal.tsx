@@ -122,25 +122,25 @@ export default function Modal({ fromTop, setIsModalOpen, driver }: Props) {
                   let type = "";
                   switch (award.type) {
                     case "champion_driver":
-                      type = "/trophy_1.png";
+                      type = "/trophy_1.webp";
                       break;
                     case "champion_team":
-                      type = "/trophy_1.png";
+                      type = "/trophy_1.webp";
                       break;
                     case "second_driver":
-                      type = "/trophy_3.png";
+                      type = "/trophy_3.webp";
                       break;
                     case "second_team":
-                      type = "/trophy_3.png";
+                      type = "/trophy_3.webp";
                       break;
                     case "third_driver":
-                      type = "/trophy_2.png";
+                      type = "/trophy_2.webp";
                       break;
                     case "third_team":
-                      type = "/trophy_2.png";
+                      type = "/trophy_2.webp";
                       break;
                     case "driver_of_the_day":
-                      type = "/medal.png";
+                      type = "/medal.webp";
                       break;
                   }
 
