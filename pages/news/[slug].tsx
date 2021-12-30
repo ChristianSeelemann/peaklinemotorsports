@@ -118,6 +118,7 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
                 src={`https://strapi.peaklinems.de${post.thumbnail.url}`}
                 alt="Post Image"
                 layout="responsive"
+                priority
                 width={post.thumbnail.width}
                 height={post.thumbnail.height}
                 className="lg:shadow-lg lg:rounded-lg bg-purple-300/10"
@@ -135,6 +136,7 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
                               width={driver.image.width}
                               height={driver.image.height}
                               layout="responsive"
+                              priority
                               className="rounded-full"
                             />
                           </div>
@@ -153,6 +155,7 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
                         height={post.simulation.logo.height}
                         width={post.simulation.logo.width}
                         layout="responsive"
+                        priority
                         className={`brightness-0 invert ${
                           post.simulation.slug === "iracing" && "rounded-md"
                         }`}
