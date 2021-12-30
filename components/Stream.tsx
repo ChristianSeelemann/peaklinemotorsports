@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { FaTwitch } from "react-icons/fa";
 import { streamProps } from "../types/types";
@@ -23,7 +23,7 @@ export default function Stream({ stream }: props) {
           <div className="w-7">
             <FaTwitch className="text-3xl" />
           </div>
-          <div className="grid ml-2 mr-3 justify-items-center">
+          <div className="grid mt-1 ml-2 mr-3 justify-items-center">
             <span>
               {stream.user_name === "Peaklinems"
                 ? "Wir sind Live!"
@@ -36,7 +36,13 @@ export default function Stream({ stream }: props) {
             </span>
           </div>
           <div className="relative w-16 overflow-hidden rounded-lg shadow-md">
-            <img src={thumbnail} alt="Stream Thumbnail" />
+            <Image
+              src={thumbnail}
+              alt="Stream Thumbnail"
+              width={160}
+              height={90}
+              layout="responsive"
+            />
           </div>
         </div>
       </a>

@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="w-10 h-10">
           <Image
             src="/PeaklineLogo.svg"
-            alt="Peakline Motorsports Log"
+            alt="Peakline Motorsports Logo"
             layout="responsive"
             height={40}
             width={40}

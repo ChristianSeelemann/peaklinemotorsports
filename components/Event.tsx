@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
+import Image from "next/image";
 import { eventsProps } from "../types/types";
 
 type props = {
@@ -23,11 +23,14 @@ export default function Event({ event }: props) {
           </span>
           <span className="text-purple-200/70">{event.competition.title}</span>
         </div>
-        <div>
+        <div className="w-16 mt-3">
           {event.simulation.logo && (
-            <img
+            <Image
               src={`https://strapi.peaklinems.de${event.simulation.logo.url}`}
               alt="Simulation Logo"
+              height={event.simulation.logo.height}
+              width={event.simulation.logo.width}
+              priority
               className={`brightness-0 invert max-w-[2.5rem] shadow-lg h-auto ${
                 event.simulation.slug === "iracing" && "rounded-md"
               }`}
@@ -37,10 +40,13 @@ export default function Event({ event }: props) {
       </div>
       <div className="absolute w-full h-full bg-gradient-to-l from-purple-700 to-purple-900/70">
         {event.competition.thumbnail && (
-          <img
+          <Image
             src={`https://strapi.peaklinems.de${event.competition.thumbnail.formats.thumbnail.url}`}
             alt="Event Thumbnail"
-            className="object-cover object-center w-full h-full opacity-40 brightness-[0.5]"
+            layout="fill"
+            objectFit="cover"
+            priority
+            className=" w-full h-full opacity-40 brightness-[0.5]"
           />
         )}
       </div>

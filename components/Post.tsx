@@ -42,7 +42,8 @@ export default function Post({ post }: { post: postsProps }) {
               alt={post.thumbnail.name}
               layout="fill"
               priority
-              className="object-cover object-center w-full h-full opacity-90 brightness-[0.5] group-hover:opacity-40 transition-all duration-300"
+              objectFit="cover"
+              className="w-full h-full opacity-90 brightness-[0.5] group-hover:opacity-40 transition-all duration-300"
             />
           </div>
         </article>
