@@ -3,5 +3,6 @@ module.exports = {
   reactStrictMode: true,
   images: {
     domains: ["strapi.peaklinems.de"],
+    formats: ["image/webp"],
   },
 };
