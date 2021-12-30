@@ -115,12 +115,12 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
           {post.thumbnail && post.thumbnail.url && (
             <div className="block lg:min-w-[20rem] select-none relative">
               <Image
-                src={`https://strapi.peaklinems.de${post.thumbnail.url}`}
+                src={`https://strapi.peaklinems.de${post.thumbnail.formats.large.url}`}
                 alt="Post Image"
                 layout="responsive"
                 priority
-                width={post.thumbnail.width}
-                height={post.thumbnail.height}
+                width={post.thumbnail.formats.large.width}
+                height={post.thumbnail.formats.large.height}
                 className="lg:shadow-lg lg:rounded-lg bg-purple-300/10"
               />
               {post.drivers.length !== 0 && (
@@ -129,12 +129,12 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
                     (driver: any, index: number) =>
                       driver.image && (
                         <a style={{ zIndex: index + 50 }} key={driver.id}>
-                          <div className="w-12 h.-12 -ml-6 border-4 rounded-full sm:-ml-8 sm:w-14 sm:h-14 border-black/30">
+                          <div className="block w-12 h-12 -ml-6 border-4 rounded-full sm:-ml-8 sm:w-14 sm:h-14 border-black/30">
                             <Image
-                              src={`https://strapi.peaklinems.de${driver.image.url}`}
+                              src={`https://strapi.peaklinems.de${driver.image.formats.thumbnail.url}`}
                               alt={`Bild von ${driver.name}`}
-                              width={driver.image.width}
-                              height={driver.image.height}
+                              width={driver.image.formats.thumbnail.width}
+                              height={driver.image.formats.thumbnail.height}
                               layout="responsive"
                               priority
                               className="rounded-full"
