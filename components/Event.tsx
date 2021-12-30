@@ -30,7 +30,6 @@ export default function Event({ event }: props) {
               alt="Simulation Logo"
               height={event.simulation.logo.height}
               width={event.simulation.logo.width}
-              priority
               className={`brightness-0 invert max-w-[2.5rem] shadow-lg h-auto ${
                 event.simulation.slug === "iracing" && "rounded-md"
               }`}
@@ -45,7 +44,6 @@ export default function Event({ event }: props) {
             alt="Event Thumbnail"
             layout="fill"
             objectFit="cover"
-            priority
             className=" w-full h-full opacity-40 brightness-[0.5]"
           />
         )}
