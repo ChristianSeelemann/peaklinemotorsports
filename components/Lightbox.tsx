@@ -45,9 +45,13 @@ export default function Lightbox({
           <CgClose className="text-5xl" />
         </div>
       </section>
-      <div
-        className="absolute left-0 mx-12 z-[9999] overflow-hidden rounded-lg"
-        style={{ top: `${fromTop + 128}px`, maxHeight: `calc(100vh - 188px)` }}
+      <section
+        className="absolute xl:w-2/3 xl:ml-[16.66666665%] left-0 mx-8 z-[9999] rounded-lg"
+        style={{
+          top: `${fromTop + 128}px`,
+          maxHeight: `calc(100vh - 188px)`,
+          maxWidth: `calc(100vw - 64px)`,
+        }}
       >
         <Image
           src={`https://strapi.peaklinems.de${url}`}
@@ -56,7 +60,7 @@ export default function Lightbox({
           height={height}
           className="z-50 rounded-lg shadow-lg bg-purple-300/10"
         />
-      </div>
+      </section>
     </>
   );
 }
