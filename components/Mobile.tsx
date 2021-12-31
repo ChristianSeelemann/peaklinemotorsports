@@ -16,6 +16,11 @@ export default function Mobile() {
               <li className="py-4">Das Team</li>
             </a>
           </Link>
+          <Link href="/gallerie">
+            <a>
+              <li className="py-4">Gallerie</li>
+            </a>
+          </Link>
           <Link href="/erfolge">
             <a>
               <li className="py-4">Unsere Erfolge</li>

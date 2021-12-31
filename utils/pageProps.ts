@@ -25,7 +25,8 @@ export default async function pageProps(
     | "countPosts"
     | "getPostsAll"
     | "getDrivers"
-    | "getAchievements",
+    | "getAchievements"
+    | "getGallery",
   fetchTypeTwo?:
     | "getSinglePost"
     | "getPostsLastSix"
@@ -35,6 +36,7 @@ export default async function pageProps(
     | "getPostsAll"
     | "getDrivers"
     | "getAchievements"
+    | "getGallery"
 ) {
   await dbConnect();
 
@@ -115,6 +117,11 @@ export default async function pageProps(
         const response9 = await fetch(fetchURL9);
         fetchedData = await response9.json();
         break;
+      case "getGallery":
+        const fetchURL10 = `${process.env.API_URL}/gallery`;
+        const response10 = await fetch(fetchURL10);
+        fetchedData = await response10.json();
+        break;
     }
   }
 
@@ -179,6 +186,11 @@ export default async function pageProps(
         const fetchURL9 = `${process.env.API_URL}/achievements?intern=true&_sort=date:desc`;
         const response9 = await fetch(fetchURL9);
         fetchedDataTwo = await response9.json();
+        break;
+      case "getGallery":
+        const fetchURL10 = `${process.env.API_URL}/gallery`;
+        const response10 = await fetch(fetchURL10);
+        fetchedDataTwo = await response10.json();
         break;
     }
   }

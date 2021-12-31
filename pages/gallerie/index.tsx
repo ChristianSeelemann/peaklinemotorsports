@@ -116,45 +116,31 @@ const Gallerie: NextPage = ({ session, fetchedData: posts }: any) => {
 
         <section className="px-4 mt-8 select-none sm:px-8 lg:px-16">
           <div className="grid grid-cols-2 sm:pb-8 rounded-2xl md:grid-cols-3 xl:grid-cols-5 lg:grid-cols-4 gap-x-2 lg:gap-x-4 lg:gap-y-2 2xl:grid-cols-6">
-            {posts.map(
-              (post: postsProps) =>
-                post.gallery.length !== 0 &&
-                post.gallery.length &&
-                post.gallery.map((image: any) => (
-                  <div
-                    key={image.id}
-                    className="cursor-pointer"
-                    onClick={() =>
-                      handleImageClick(
-                        image.url,
-                        image.height,
-                        image.width,
-                        image.name
-                      )
-                    }
-                  >
-                    <Image
-                      src={`https://strapi.peaklinems.de${
-                        image.formats.medium
-                          ? image.formats.medium.url
-                          : image.url
-                      }`}
-                      alt={image.name}
-                      height={
-                        image.formats.medium
-                          ? image.formats.medium.height
-                          : image.height
-                      }
-                      width={
-                        image.formats.medium
-                          ? image.formats.medium.width
-                          : image.width
-                      }
-                      className="rounded-md shadow-lg bg-violet-300/10 lg:rounded-xl"
-                    />
-                  </div>
-                ))
-            )}
+            {posts.images.map((post: any) => (
+              <div
+                key={post.id}
+                className="cursor-pointer"
+                onClick={() =>
+                  handleImageClick(post.url, post.height, post.width, post.name)
+                }
+              >
+                <Image
+                  src={`https://strapi.peaklinems.de${
+                    post.formats.medium ? post.formats.medium.url : post.url
+                  }`}
+                  alt={post.name}
+                  height={
+                    post.formats.medium
+                      ? post.formats.medium.height
+                      : post.height
+                  }
+                  width={
+                    post.formats.medium ? post.formats.medium.width : post.width
+                  }
+                  className="rounded-md shadow-lg bg-violet-300/10 lg:rounded-xl"
+                />
+              </div>
+            ))}
           </div>
         </section>
 
@@ -180,5 +166,5 @@ const Gallerie: NextPage = ({ session, fetchedData: posts }: any) => {
 export default Gallerie;
 
 export const getServerSideProps = async (context: Props) => {
-  return pageProps(context, "getPostsAll");
+  return pageProps(context, "getGallery");
 };
