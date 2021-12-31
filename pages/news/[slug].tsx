@@ -115,12 +115,24 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
           {post.thumbnail && post.thumbnail.url && (
             <div className="block lg:min-w-[20rem] select-none relative">
               <Image
-                src={`https://strapi.peaklinems.de${post.thumbnail.formats.large.url}`}
+                src={`https://strapi.peaklinems.de${
+                  post.thumbnail.formats.large
+                    ? post.thumbnail.formats.large.url
+                    : post.thumbnail.url
+                }`}
                 alt="Post Image"
                 layout="responsive"
                 priority
-                width={post.thumbnail.formats.large.width}
-                height={post.thumbnail.formats.large.height}
+                width={
+                  post.thumbnail.formats.large
+                    ? post.thumbnail.formats.large.width
+                    : post.thumbnail.width
+                }
+                height={
+                  post.thumbnail.formats.large
+                    ? post.thumbnail.formats.large.height
+                    : post.thumbnail.height
+                }
                 className="lg:shadow-lg lg:rounded-lg bg-violet-300/10"
               />
               {post.drivers.length !== 0 && (
