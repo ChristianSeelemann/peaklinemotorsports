@@ -220,3 +220,7 @@ h5 {
 #tooltip {
   white-space: pre-wrap;
 }
+
+.editor h2 {
+  @apply mt-4 -mb-5 text-2xl;
+}
