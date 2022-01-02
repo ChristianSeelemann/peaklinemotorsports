@@ -94,7 +94,7 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
         />
         <meta
           property="og:image"
-          content={`${process.env.NEXT_PUBLIC_API_URL}${post.thumbnail.url}`}
+          content={`https://strapi.peaklinems.de${post.thumbnail.url}`}
           key="ogimage"
         />
         <meta
