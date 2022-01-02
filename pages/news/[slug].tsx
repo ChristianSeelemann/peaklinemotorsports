@@ -141,7 +141,7 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
                     (driver: any, index: number) =>
                       driver.image && (
                         <a style={{ zIndex: index + 50 }} key={driver.id}>
-                          <div className="block w-12 h-12 -ml-6 border-4 rounded-full sm:-ml-8 sm:w-14 sm:h-14 border-black/30">
+                          <div className="block w-12 h-12 -ml-6 overflow-hidden border-4 rounded-full sm:-ml-8 sm:w-14 sm:h-14 border-black/30">
                             <Image
                               src={`https://strapi.peaklinems.de${driver.image.formats.thumbnail.url}`}
                               alt={`Bild von ${driver.name}`}
