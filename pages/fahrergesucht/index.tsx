@@ -99,7 +99,7 @@ const Fahrergesucht: NextPage = () => {
               <p className="text-lg leading-7 whitespace-pre-wrap text-violet-100/90 font-overpass editor">
                 Im Gegensatz zu vielen anderen Teams sind wir nicht auf eine
                 feste Simulation festgelegt. Während wir aktuell in iRacing,
-                Assetto Corsa, Raceroom und Dirt 2.0 untwegs sind, sind wir
+                Assetto Corsa, Raceroom und Dirt 2.0 unterwegs sind, sind wir
                 stets offen für Fahrer, welche ihre Leidenschaft für eine andere
                 Simulation entwickelt haben.
               </p>
