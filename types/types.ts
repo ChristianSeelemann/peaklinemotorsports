@@ -82,6 +82,17 @@ export interface postsProps {
   drivers: driversProps[];
   simulation: simulationsProps;
   competitions: competitionsProps[];
+  Zusammenfassung: {
+    id: number;
+    Fahrer: string;
+    Position: string;
+    Flagge: {
+      id: number;
+      url: string;
+      width: number;
+      height: number;
+    }[];
+  };
 }
 [];
 
