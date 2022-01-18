@@ -197,6 +197,42 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
               dangerouslySetInnerHTML={{ __html: post.content }}
             ></div>
 
+            {post.Zusammenfassung.length !== 0 && (
+              <section className="pt-8">
+                <h3 className="mt-4 mb-10 text-xl">Auf einem Blick</h3>
+                <div className="grid gap-2">
+                  {post.Zusammenfassung.map((item: any) => (
+                    <div
+                      key={item.id}
+                      className="flex items-center gap-4 text-lg leading-7 whitespace-pre-wrap w-96 text-violet-100/90 font-overpass editor"
+                    >
+                      <div className="w-9">
+                        <Image
+                          src={`https://strapi.peaklinems.de${item.Flagge.url}`}
+                          alt="Nation des Fahrers"
+                          width={item.Flagge.width}
+                          height={item.Flagge.height}
+                          className="rounded-md"
+                        />
+                      </div>
+                      <div className="-mt-1">{item.Fahrer}</div>
+                      <div
+                        className={`px-2 pt-2 pb-1 -mt-2 text-base rounded shadow-md bg-violet-800 shadow-violet-500/20 ${
+                          item.Position === "DNS" &&
+                          "bg-orange-600 shadow-orange-300/30"
+                        } ${
+                          item.Position === "DNF" &&
+                          "bg-red-600 shadow-red-400/30"
+                        }`}
+                      >
+                        {item.Position}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
             {post.youtube && (
               <section className="mt-8">
                 <div className="relative h-0 overflow-hidden pb-[56.25%]">
