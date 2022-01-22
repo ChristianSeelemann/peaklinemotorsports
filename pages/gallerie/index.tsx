@@ -116,7 +116,7 @@ const Gallerie: NextPage = ({ session, fetchedData: posts }: any) => {
 
         <section className="px-4 mt-8 select-none sm:px-8 lg:px-16">
           <div className="grid grid-cols-2 sm:pb-8 rounded-2xl md:grid-cols-3 xl:grid-cols-5 lg:grid-cols-4 gap-x-2 lg:gap-x-4 lg:gap-y-2 2xl:grid-cols-6">
-            {posts.images.map((post: any) => (
+            {posts.images.reverse().map((post: any) => (
               <div
                 key={post.id}
                 className="cursor-pointer"
