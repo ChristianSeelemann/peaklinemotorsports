@@ -208,7 +208,11 @@ const SingleNews: NextPage = ({ session, fetchedData: posts }: any) => {
                     >
                       <div className="w-9">
                         <Image
-                          src={`https://strapi.peaklinems.de${item.Flagge.url}`}
+                          src={
+                            item.Flagge
+                              ? `https://strapi.peaklinems.de${item.Flagge.url}`
+                              : "https://strapi.peaklinems.de/uploads/de_dd6ff2f3ba.svg"
+                          }
                           alt="Nation des Fahrers"
                           width={item.Flagge.width}
                           height={item.Flagge.height}
