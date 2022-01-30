@@ -4,10 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import StreamingHeader from "../../components/StreamingHeader";
-import pageProps from "../../utils/pageProps";
-import Headline from "../../components/Headline";
-import { overlayProps } from "../../types/types";
+import StreamingHeader from "../../../components/StreamingHeader";
+import pageProps from "../../../utils/pageProps";
+import Headline from "../../../components/Headline";
+import { overlayProps } from "../../../types/types";
 
 type Props = {
   locale: string;
@@ -20,7 +20,7 @@ type Props = {
   };
 };
 
-const Streaming: NextPage = ({ session, fetchedData: overlays }: any) => {
+const StreamingEdit: NextPage = ({ session, fetchedData: overlays }: any) => {
   const router = useRouter();
 
   return (
@@ -93,50 +93,18 @@ const Streaming: NextPage = ({ session, fetchedData: overlays }: any) => {
         <section className="px-4 py-4 mx-4 mt-8 select-none rounded-xl sm:px-6 lg:px-8 sm:mx-6 bg-background lg:mx-12">
           <div>
             {!session ? (
-              "Du musst eingeloggt sein um eigene Overlays erstellen zu können."
+              "Du musst eingeloggt um dein Overlay sehen zu können."
             ) : overlays && overlays.length === 0 ? (
               "Keine Overlays vorhanden."
             ) : (
               <section>
-                <Link href="/streaming/edit">
+                <Link href="/streaming">
                   <a>
                     <div className="px-2 pt-2 pb-1 rounded-md cursor-pointer w-fit bg-violet-600">
-                      Neues Overlay
+                      Übersicht
                     </div>
                   </a>
                 </Link>
-                {overlays.map((overlay: overlayProps) => {
-                  if (overlay.userID === session.name) {
-                    return (
-                      <section
-                        key={overlay.slug}
-                        className="grid items-center grid-cols-3 gap-4 mt-4"
-                      >
-                        <div>{overlay.bezeichnung}</div>
-                        <div>{overlay.userID}</div>
-                        <div className="flex justify-end gap-2">
-                          <Link href={`/streaming/${overlay.slug}`}>
-                            <a target="_blank" rel="noopener">
-                              <div className="px-2 pt-2 pb-1 rounded-md cursor-pointer bg-violet-600">
-                                Link
-                              </div>
-                            </a>
-                          </Link>
-                          <Link href={`/streaming/edit?slug=${overlay.slug}`}>
-                            <a>
-                              <div className="px-2 pt-2 pb-1 bg-orange-500 rounded-md cursor-pointer">
-                                Edit
-                              </div>
-                            </a>
-                          </Link>
-                          <div className="px-2 pt-2 pb-1 bg-red-600 rounded-md cursor-pointer">
-                            Delete
-                          </div>
-                        </div>
-                      </section>
-                    );
-                  }
-                })}
               </section>
             )}
           </div>
@@ -146,7 +114,7 @@ const Streaming: NextPage = ({ session, fetchedData: overlays }: any) => {
   );
 };
 
-export default Streaming;
+export default StreamingEdit;
 
 export const getServerSideProps = async (context: Props) => {
   return pageProps(context, "getOverlays");
