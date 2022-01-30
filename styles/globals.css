@@ -48,6 +48,7 @@ html {
   background-image: url("/background.webp");
   background-position: right top;
   background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 .overlay {
