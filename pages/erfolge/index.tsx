@@ -25,7 +25,7 @@ const Erfolge: NextPage = ({ session, fetchedData: achievements }: any) => {
   const router = useRouter();
 
   return (
-    <div>
+    <div className="generic">
       <Head>
         <title>Unsere Erfolge | Peakline Motorsports</title>
         <meta name="description" content="Simracing Team" />

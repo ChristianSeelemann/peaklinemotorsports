@@ -31,7 +31,7 @@ const Home: NextPage = ({
   const router = useRouter();
 
   return (
-    <div>
+    <div className="generic">
       <Head>
         <title>Peakline Motorsports</title>
         <meta name="description" content="Simracing Team" />

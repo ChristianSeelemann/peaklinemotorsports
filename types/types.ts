@@ -301,3 +301,45 @@ export interface streamProps {
   user_name: string;
   user_login: string;
 }
+
+export interface overlayProps {
+  userID: string;
+  type: "overlay";
+  slug: string;
+  teamlogo: boolean | null;
+  drivername: string;
+  camera: boolean;
+  sponsors: boolean;
+  relativebox: boolean;
+  bezeichnung: string;
+  eventlogo: {
+    id: number;
+    name: string;
+    width: number;
+    height: number;
+    size: number;
+    url: string;
+    formats: {
+      thumbnail: {
+        url: string;
+        width: number;
+        height: number;
+      };
+      large: {
+        url: string;
+        width: number;
+        height: number;
+      };
+      medium: {
+        url: string;
+        width: number;
+        height: number;
+      };
+      small: {
+        url: string;
+        width: number;
+        height: number;
+      };
+    };
+  };
+}

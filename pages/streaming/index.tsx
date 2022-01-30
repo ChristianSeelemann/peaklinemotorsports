@@ -1,10 +1,12 @@
 import type { NextApiRequest, NextApiResponse, NextPage } from "next";
+import { useState } from "react";
+import Image from "next/image";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
+import StreamingHeader from "../../components/StreamingHeader";
+import pageProps from "../../utils/pageProps";
 import Headline from "../../components/Headline";
-import Sponsors from "../../components/Sponsors";
+import { overlayProps } from "../../types/types";
 
 type Props = {
   locale: string;
@@ -17,14 +19,17 @@ type Props = {
   };
 };
 
-const Impressum: NextPage = () => {
+const Streaming: NextPage = ({ session, fetchedData: overlays }: any) => {
   const router = useRouter();
 
   return (
     <div className="generic">
       <Head>
-        <title>Impressum | Peakline Motorsports</title>
-        <meta name="description" content="Simracing Team" />
+        <title>Streaming Overlay System | Peakline Motorsports</title>
+        <meta
+          name="description"
+          content="Peakline Motorsports Streaming Overlay"
+        />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -67,58 +72,55 @@ const Impressum: NextPage = () => {
           content="Peakline Motorsports"
           key="ogsitename"
         />
-        <meta property="og:title" content="Impressum" key="ogtitle" />
+        <meta property="og:title" content="Streaming Overlay" key="ogtitle" />
         <meta
           property="og:description"
-          content="Die violetten Pfeile"
+          content="Peakline Motorsports Streaming Overlay"
           key="ogdesc"
         />
         <meta property="og:type" content="website" />
       </Head>
 
-      <Header />
+      <StreamingHeader session={session} />
 
       <main>
-        <Headline headline="Impressum" />
+        <Headline
+          headline="Streaming Overlay System"
+          subheading="Peakline Motorsports"
+        />
 
-        <section className="px-6 py-5 mx-6 mt-8 text-lg leading-7 break-words border-b-2 border-violet-600/20 sm:mx-8 lg:mx-16 rounded-2xl text-violet-100/90 font-overpass editor bg-background">
-          <div className="mb-8">
-            <h4 className="pb-6 text-violet-600">Angaben gemäß § 5 TMG</h4>
-            <p>Christian Seelemann</p>
-            <p>Wiesenweg 13</p>
-            <p>21423 Winsen (Luhe)</p>
-          </div>
-          <div className="mb-8">
-            <h4 className="pb-6 text-violet-600">Kontakt</h4>
-            <p>E-Mail: info[at]peaklinems.de</p>
-          </div>
-          <div className="mb-8">
-            <h4 className="pb-6 text-violet-600">
-              Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
-            </h4>
-            <p>Christian Seelemann</p>
-          </div>
-          <div className="mb-2">
-            <h4 className="pb-6 text-violet-600">
-              Ansprechpartner für Sponsoren- Werbung- und
-              Affiliateangelegenheiten
-            </h4>
-            <p>Christian Seelemann</p>
-            <p>info[at]peakline.motorsports.de</p>
+        <section className="px-4 mt-8 select-none sm:px-8 lg:px-16">
+          <div>
+            {!session ? (
+              "Du musst eingeloggt sein um eigene Overlays erstellen zu können."
+            ) : overlays && overlays.length === 0 ? (
+              "Keine Overlays vorhanden."
+            ) : (
+              <section>
+                <section className="flex justify-between gap-4">
+                  <div>Typ</div>
+                  <div>Name</div>
+                </section>
+                {overlays.map((overlay: overlayProps) => (
+                  <section
+                    key={overlay.slug}
+                    className="flex justify-between gap-4"
+                  >
+                    <div>{overlay.userID}</div>
+                    <div>{overlay.type}</div>
+                  </section>
+                ))}
+              </section>
+            )}
           </div>
         </section>
-
-        <Sponsors />
       </main>
-
-      <Footer />
     </div>
   );
 };
 
-export default Impressum;
+export default Streaming;
 
-/* export const getServerSideProps = async (context: Props) => {
-  return pageProps(context);
+export const getServerSideProps = async (context: Props) => {
+  return pageProps(context, "getOverlays");
 };
- */

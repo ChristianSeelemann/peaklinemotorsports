@@ -10,8 +10,9 @@ type Props = {
   res: NextApiResponse;
   resolvedUrl: string;
   query: {
-    page: string;
-    slug: string;
+    page?: string;
+    slug?: string;
+    id?: string;
   };
 };
 
@@ -26,7 +27,9 @@ export default async function pageProps(
     | "getPostsAll"
     | "getDrivers"
     | "getAchievements"
-    | "getGallery",
+    | "getGallery"
+    | "getOverlays"
+    | "getSingleOverlay",
   fetchTypeTwo?:
     | "getSinglePost"
     | "getPostsLastSix"
@@ -37,6 +40,8 @@ export default async function pageProps(
     | "getDrivers"
     | "getAchievements"
     | "getGallery"
+    | "getOverlays"
+    | "getSingleOverlay"
 ) {
   await dbConnect();
 
@@ -122,6 +127,16 @@ export default async function pageProps(
         const response10 = await fetch(fetchURL10);
         fetchedData = await response10.json();
         break;
+      case "getOverlays":
+        const fetchURL11 = `${process.env.API_URL}/overlays`;
+        const response11 = await fetch(fetchURL11);
+        fetchedData = await response11.json();
+        break;
+      case "getSingleOverlay":
+        const fetchURL12 = `${process.env.API_URL}/overlays?slug=${context.query.id}`;
+        const response12 = await fetch(fetchURL12);
+        fetchedData = await response12.json();
+        break;
     }
   }
 
@@ -191,6 +206,16 @@ export default async function pageProps(
         const fetchURL10 = `${process.env.API_URL}/gallery`;
         const response10 = await fetch(fetchURL10);
         fetchedDataTwo = await response10.json();
+        break;
+      case "getOverlays":
+        const fetchURL11 = `${process.env.API_URL}/overlays`;
+        const response11 = await fetch(fetchURL11);
+        fetchedData = await response11.json();
+        break;
+      case "getSingleOverlay":
+        const fetchURL12 = `${process.env.API_URL}/overlays?slug=${context.query.id}`;
+        const response12 = await fetch(fetchURL12);
+        fetchedData = await response12.json();
         break;
     }
   }

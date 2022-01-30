@@ -40,11 +40,20 @@ body {
 }
 
 html {
-  background-color: var(--color-background);
   color: var(--color-font);
+}
+
+.generic {
+  background-color: var(--color-background);
   background-image: url("/background.webp");
   background-position: right top;
   background-repeat: no-repeat;
+  height: 100vh;
+  width: calc(100vw - 0.5rem);
+}
+
+.overlay {
+  overflow: hidden;
 }
 
 a {
