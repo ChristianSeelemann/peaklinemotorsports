@@ -24,7 +24,7 @@ const Fahrergesucht: NextPage = () => {
   const router = useRouter();
 
   return (
-    <div>
+    <div className="generic">
       <Head>
         <title>Wir suchen dich! | Peakline Motorsports</title>
         <meta name="description" content="Simracing Team" />

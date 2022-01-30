@@ -40,7 +40,7 @@ const News: NextPage = ({
   const next = actualSite + 1;
 
   return (
-    <div>
+    <div className="generic">
       <Head>
         <title>Neugikeiten | Peakline Motorsports</title>
         <meta name="description" content="Simracing Team" />

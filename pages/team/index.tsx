@@ -27,7 +27,7 @@ const Team: NextPage = ({ session, fetchedData: drivers }: any) => {
   const router = useRouter();
 
   return (
-    <div>
+    <div className="generic">
       <Head>
         <title>Unser Team | Peakline Motorsports</title>
         <meta name="description" content="Simracing Team" />

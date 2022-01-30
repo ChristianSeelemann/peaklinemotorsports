@@ -22,7 +22,7 @@ const Datenschutz: NextPage = () => {
   const router = useRouter();
 
   return (
-    <div>
+    <div className="generic">
       <Head>
         <title>Datenschutz | Peakline Motorsports</title>
         <meta name="description" content="Simracing Team" />

@@ -51,7 +51,7 @@ const Gallerie: NextPage = ({ session, fetchedData: posts }: any) => {
   }
 
   return (
-    <div>
+    <div className="generic">
       <Head>
         <title>Gallerie | Peakline Motorsports</title>
         <meta name="description" content="Simracing Team" />
