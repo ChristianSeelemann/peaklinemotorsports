@@ -21,7 +21,8 @@
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
     "react-tooltip": "^4.2.21",
-    "sharp": "^0.29.3"
+    "sharp": "^0.29.3",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/node": "16.11.10",
