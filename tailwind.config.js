@@ -21,6 +21,7 @@ module.exports = {
       violet: colors.violet,
       red: colors.red,
       orange: colors.orange,
+      green: colors.green,
     },
     fontFamily: {
       montserrat: ["Montserrat", "sans-serif"],
