@@ -1,10 +1,9 @@
 import type { NextApiRequest, NextApiResponse, NextPage } from "next";
-import { useState } from "react";
 import Image from "next/image";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import pageProps from "../../utils/pageProps";
-import { driversProps, overlayProps } from "../../types/types";
+import { driversProps } from "../../types/types";
 
 type Props = {
   locale: string;

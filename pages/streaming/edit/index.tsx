@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse, NextPage } from "next";
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
@@ -7,7 +6,8 @@ import { useRouter } from "next/router";
 import StreamingHeader from "../../../components/StreamingHeader";
 import pageProps from "../../../utils/pageProps";
 import Headline from "../../../components/Headline";
-import { overlayProps } from "../../../types/types";
+import NewOverlay from "../../../components/newOverlay";
+import EditOverlay from "../../../components/editOverlay";
 
 type Props = {
   locale: string;
@@ -20,7 +20,11 @@ type Props = {
   };
 };
 
-const StreamingEdit: NextPage = ({ session, fetchedData: overlays }: any) => {
+const StreamingEdit: NextPage = ({
+  session,
+  fetchedData: overlay,
+  fetchedDataTwo: eventlogo,
+}: any) => {
   const router = useRouter();
 
   return (
@@ -94,8 +98,8 @@ const StreamingEdit: NextPage = ({ session, fetchedData: overlays }: any) => {
           <div>
             {!session ? (
               "Du musst eingeloggt um dein Overlay sehen zu können."
-            ) : overlays && overlays.length === 0 ? (
-              "Keine Overlays vorhanden."
+            ) : overlay && overlay.length === 0 && router.query.slug ? (
+              "Dieses Overlay existiert nicht."
             ) : (
               <section>
                 <Link href="/streaming">
@@ -105,6 +109,15 @@ const StreamingEdit: NextPage = ({ session, fetchedData: overlays }: any) => {
                     </div>
                   </a>
                 </Link>
+                {router.query.slug ? (
+                  <EditOverlay
+                    session={session}
+                    overlay={overlay[0]}
+                    eventlogo={eventlogo}
+                  />
+                ) : (
+                  <NewOverlay session={session} />
+                )}
               </section>
             )}
           </div>
@@ -117,5 +130,5 @@ const StreamingEdit: NextPage = ({ session, fetchedData: overlays }: any) => {
 export default StreamingEdit;
 
 export const getServerSideProps = async (context: Props) => {
-  return pageProps(context, "getOverlays");
+  return pageProps(context, "getSingleOverlay", "getSingleUpload");
 };

@@ -1,9 +1,8 @@
 import type { NextApiRequest, NextApiResponse, NextPage } from "next";
-import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import axios from "axios";
 import StreamingHeader from "../../components/StreamingHeader";
 import pageProps from "../../utils/pageProps";
 import Headline from "../../components/Headline";
@@ -22,6 +21,21 @@ type Props = {
 
 const Streaming: NextPage = ({ session, fetchedData: overlays }: any) => {
   const router = useRouter();
+
+  function handleDelete(id: number) {
+    axios
+      .delete(`https://strapi.peaklinems.de/overlays/${id}`, {
+        headers: {
+          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQzNTk5MDUyLCJleHAiOjE2NDYxOTEwNTJ9.s7ql6-X_SmGBWObZxmcNYs0C4NnV4UGguyfdhO4VA18`,
+        },
+      })
+      .then(function () {
+        router.push(router.asPath);
+      })
+      .catch(function () {
+        alert("Löschen fehlgeschlagen.");
+      });
+  }
 
   return (
     <div className="generic">
@@ -105,38 +119,51 @@ const Streaming: NextPage = ({ session, fetchedData: overlays }: any) => {
                     </div>
                   </a>
                 </Link>
-                {overlays.map((overlay: overlayProps) => {
-                  if (overlay.userID === session.name) {
-                    return (
-                      <section
-                        key={overlay.slug}
-                        className="grid items-center grid-cols-3 gap-4 mt-4"
-                      >
-                        <div>{overlay.bezeichnung}</div>
-                        <div>{overlay.userID}</div>
-                        <div className="flex justify-end gap-2">
-                          <Link href={`/streaming/${overlay.slug}`}>
-                            <a target="_blank" rel="noopener">
-                              <div className="px-2 pt-2 pb-1 rounded-md cursor-pointer bg-violet-600">
-                                Link
-                              </div>
-                            </a>
-                          </Link>
-                          <Link href={`/streaming/edit?slug=${overlay.slug}`}>
-                            <a>
-                              <div className="px-2 pt-2 pb-1 bg-orange-500 rounded-md cursor-pointer">
-                                Edit
-                              </div>
-                            </a>
-                          </Link>
-                          <div className="px-2 pt-2 pb-1 bg-red-600 rounded-md cursor-pointer">
-                            Delete
+                <section className="grid gap-2 mt-6">
+                  {overlays.map((overlay: overlayProps) => {
+                    if (overlay.userID === session.name) {
+                      return (
+                        <section
+                          key={overlay.slug}
+                          className="grid items-center grid-cols-3 gap-4"
+                        >
+                          <div>{overlay.bezeichnung}</div>
+                          <div>{overlay.userID}</div>
+                          <div className="flex justify-end gap-2">
+                            <Link href={`/streaming/${overlay.slug}`}>
+                              <a target="_blank" rel="noopener">
+                                <div className="px-2 pt-2 pb-1 rounded-md cursor-pointer bg-violet-600">
+                                  Link
+                                </div>
+                              </a>
+                            </Link>
+                            <Link href={`/streaming/edit?slug=${overlay.slug}`}>
+                              <a>
+                                <div className="px-2 pt-2 pb-1 bg-orange-500 rounded-md cursor-pointer">
+                                  Edit
+                                </div>
+                              </a>
+                            </Link>
+                            <div
+                              className="px-2 pt-2 pb-1 bg-red-600 rounded-md cursor-pointer"
+                              onClick={() => {
+                                if (
+                                  confirm(
+                                    "Willst du das Overlay wirklich löschen?"
+                                  ) === true
+                                ) {
+                                  handleDelete(overlay.id);
+                                }
+                              }}
+                            >
+                              Delete
+                            </div>
                           </div>
-                        </div>
-                      </section>
-                    );
-                  }
-                })}
+                        </section>
+                      );
+                    }
+                  })}
+                </section>
               </section>
             )}
           </div>
