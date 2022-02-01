@@ -303,6 +303,7 @@ export interface streamProps {
 }
 
 export interface overlayProps {
+  id: number;
   userID: string;
   type: "overlay";
   slug: string;
