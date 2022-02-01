@@ -29,7 +29,8 @@ export default async function pageProps(
     | "getAchievements"
     | "getGallery"
     | "getOverlays"
-    | "getSingleOverlay",
+    | "getSingleOverlay"
+    | "getSingleUpload",
   fetchTypeTwo?:
     | "getSinglePost"
     | "getPostsLastSix"
@@ -42,6 +43,7 @@ export default async function pageProps(
     | "getGallery"
     | "getOverlays"
     | "getSingleOverlay"
+    | "getSingleUpload"
 ) {
   await dbConnect();
 
@@ -133,9 +135,23 @@ export default async function pageProps(
         fetchedData = await response11.json();
         break;
       case "getSingleOverlay":
-        const fetchURL12 = `${process.env.API_URL}/overlays?slug=${context.query.id}`;
+        const fetchURL12 = `${process.env.API_URL}/overlays?slug=${context.query.slug}`;
         const response12 = await fetch(fetchURL12);
         fetchedData = await response12.json();
+        break;
+      case "getSingleUpload":
+        const uploadFetch = await fetch(
+          `${process.env.API_URL}/overlays?slug=${context.query.slug}`
+        );
+        const uploadData: any = await uploadFetch.json();
+        if (uploadData[0].eventlogo && uploadData[0].eventlogo.id) {
+          const uploadID = uploadData[0].eventlogo.id;
+          const fetchURL13 = `${process.env.API_URL}/upload/files/${uploadID}`;
+          const response13 = await fetch(fetchURL13);
+          fetchedDataTwo = await response13.json();
+        } else {
+          fetchedDataTwo = null;
+        }
         break;
     }
   }
@@ -213,15 +229,32 @@ export default async function pageProps(
         fetchedData = await response11.json();
         break;
       case "getSingleOverlay":
-        const fetchURL12 = `${process.env.API_URL}/overlays?slug=${context.query.id}`;
+        const fetchURL12 = `${process.env.API_URL}/overlays?slug=${context.query.slug}`;
         const response12 = await fetch(fetchURL12);
         fetchedData = await response12.json();
+        break;
+      case "getSingleUpload":
+        const uploadFetch = await fetch(
+          `${process.env.API_URL}/overlays?slug=${context.query.slug}`
+        );
+        const uploadData: any = await uploadFetch.json();
+        if (uploadData[0].eventlogo && uploadData[0].eventlogo.id) {
+          const uploadID = uploadData[0].eventlogo.id;
+          const fetchURL13 = `${process.env.API_URL}/upload/files/${uploadID}`;
+          const response13 = await fetch(fetchURL13);
+          fetchedDataTwo = await response13.json();
+        } else {
+          fetchedDataTwo = null;
+        }
         break;
     }
   }
 
+  const CLIENT_ID = process.env.TWITCH_ID || "";
+  const CLIENT_SECRET = process.env.TWITCH_SECRET || "";
+
   const token = await fetch(
-    "https://id.twitch.tv/oauth2/token?client_id=d70qf3x51btsh8784t46vxu5sp4fcq&client_secret=k6vbzu7qc6as7g6dg9gi0ed6cjkpdr&grant_type=client_credentials",
+    `https://id.twitch.tv/oauth2/token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&grant_type=client_credentials`,
     {
       method: "POST",
     }
@@ -233,7 +266,7 @@ export default async function pageProps(
     {
       headers: {
         Authorization: `Bearer ${tokenData.access_token}`,
-        "Client-Id": "d70qf3x51btsh8784t46vxu5sp4fcq",
+        "Client-Id": CLIENT_ID,
       },
     }
   );
