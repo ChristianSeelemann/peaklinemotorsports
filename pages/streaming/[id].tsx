@@ -83,24 +83,26 @@ const Overlay: NextPage = ({ fetchedData }: any) => {
         <section>
           <section className="fixed w-full bottom-1">
             <div className="flex justify-center">
-              <div className="mr-2 shadow-md shadow-violet-800 rounded-xl bg-gradient-to-br from-purple-700 to-purple-900">
-                <div className="flex mx-4 mt-[0.7rem]">
-                  <div className="w-10 mr-2">
-                    <Image
-                      src={
-                        "https://strapi.peaklinems.de/uploads/Peakline_P_Light_98f96b128f.svg"
-                      }
-                      alt="Peakline Motorsports Logo"
-                      height={181}
-                      width={224}
-                    />
-                  </div>
-                  <div className="grid mt-1 text-xs font-bold uppercase">
-                    <span className="pb-[0.1rem]">Peakline</span>
-                    <span className="-mt-2">Motorsports</span>
+              {overlay.teamlogo && (
+                <div className="mr-2 shadow-md shadow-violet-800 rounded-xl bg-gradient-to-br from-purple-700 to-purple-900">
+                  <div className="flex mx-4 mt-[0.7rem]">
+                    <div className="w-10 mr-2">
+                      <Image
+                        src={
+                          "https://strapi.peaklinems.de/uploads/Peakline_P_Light_98f96b128f.svg"
+                        }
+                        alt="Peakline Motorsports Logo"
+                        height={181}
+                        width={224}
+                      />
+                    </div>
+                    <div className="grid mt-1 text-xs font-bold uppercase">
+                      <span className="pb-[0.1rem]">Peakline</span>
+                      <span className="-mt-2">Motorsports</span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
               {overlay.sponsors && (
                 <>
                   <div className="flex items-center mr-2 shadow-md rounded-xl bg-gradient-to-br from-purple-600 to-purple-800 shadow-violet-700">
