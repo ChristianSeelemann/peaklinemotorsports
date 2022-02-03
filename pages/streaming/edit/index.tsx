@@ -15,7 +15,7 @@ type Props = {
   resolvedUrl: string;
   query: {
     page: string;
-    slug: string;
+    id: string;
   };
 };
 
@@ -98,7 +98,7 @@ const StreamingEdit: NextPage = ({
           <div>
             {!session ? (
               "Du musst eingeloggt um dein Overlay sehen zu können."
-            ) : overlay && overlay.length === 0 && router.query.slug ? (
+            ) : overlay && overlay.length === 0 && router.query.id ? (
               "Dieses Overlay existiert nicht."
             ) : (
               <section>
@@ -109,7 +109,7 @@ const StreamingEdit: NextPage = ({
                     </div>
                   </a>
                 </Link>
-                {router.query.slug ? (
+                {router.query.id ? (
                   <EditOverlay
                     session={session}
                     overlay={overlay[0]}
