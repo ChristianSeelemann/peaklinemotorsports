@@ -7,6 +7,7 @@ import axios from "axios";
 import StreamingHeader from "../../components/StreamingHeader";
 import pageProps from "../../utils/pageProps";
 import Headline from "../../components/Headline";
+import { AiFillLock, AiFillUnlock } from "react-icons/ai";
 import { overlayProps } from "../../types/types";
 
 const { publicRuntimeConfig } = getConfig();
@@ -131,27 +132,35 @@ const Streaming: NextPage = ({ session, fetchedData: overlays }: any) => {
                       return (
                         <section
                           key={overlay.slug}
-                          className="grid items-center grid-cols-3 gap-4"
+                          className="flex flex-row items-center justify-between gap-4 auto-cols-auto"
                         >
-                          <div>{overlay.bezeichnung}</div>
-                          <div>{overlay.userID}</div>
+                          <div>
+                            {overlay.private ? (
+                              <AiFillLock className="-mt-[0.4rem] text-lg" />
+                            ) : (
+                              <AiFillUnlock className="-mt-[0.4rem] text-lg" />
+                            )}
+                          </div>
+                          <div className="w-full text-sm sm:text-base">
+                            {overlay.bezeichnung}
+                          </div>
                           <div className="flex justify-end gap-2">
                             <Link href={`/streaming/${overlay.slug}`}>
                               <a target="_blank" rel="noopener">
-                                <div className="px-2 pt-2 pb-1 rounded-md cursor-pointer bg-violet-600">
+                                <div className="px-1 pt-2 pb-1 text-sm rounded-md cursor-pointer sm:text-base sm:px-2 bg-violet-600">
                                   Link
                                 </div>
                               </a>
                             </Link>
-                            <Link href={`/streaming/edit?slug=${overlay.slug}`}>
+                            <Link href={`/streaming/edit?id=${overlay.slug}`}>
                               <a>
-                                <div className="px-2 pt-2 pb-1 bg-orange-500 rounded-md cursor-pointer">
+                                <div className="px-1 pt-2 pb-1 text-sm bg-orange-500 rounded-md cursor-pointer sm:text-base sm:px-2">
                                   Edit
                                 </div>
                               </a>
                             </Link>
                             <div
-                              className="px-2 pt-2 pb-1 bg-red-600 rounded-md cursor-pointer"
+                              className="px-1 pt-2 pb-1 text-sm bg-red-600 rounded-md cursor-pointer sm:text-base sm:px-2"
                               onClick={() => {
                                 if (
                                   confirm(
