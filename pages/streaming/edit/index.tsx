@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse, NextPage } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -24,11 +23,12 @@ const StreamingEdit: NextPage = ({
   session,
   fetchedData: overlay,
   fetchedDataTwo: eventlogo,
+  fetchedDataThree: drivers,
 }: any) => {
   const router = useRouter();
 
   return (
-    <div className="generic">
+    <div className="pb-8 generic">
       <Head>
         <title>Streaming Overlay System | Peakline Motorsports</title>
         <meta
@@ -94,7 +94,7 @@ const StreamingEdit: NextPage = ({
           subheading="Peakline Motorsports"
         />
 
-        <section className="px-4 py-4 mx-4 mt-8 select-none rounded-xl sm:px-6 lg:px-8 sm:mx-6 bg-background lg:mx-12">
+        <section className="px-4 py-8 mx-4 mt-8 select-none rounded-xl sm:px-6 lg:px-8 sm:mx-6 bg-background lg:mx-12">
           <div>
             {!session ? (
               "Du musst eingeloggt um dein Overlay sehen zu können."
@@ -114,9 +114,10 @@ const StreamingEdit: NextPage = ({
                     session={session}
                     overlay={overlay[0]}
                     eventlogo={eventlogo}
+                    drivers={drivers}
                   />
                 ) : (
-                  <NewOverlay session={session} />
+                  <NewOverlay session={session} drivers={drivers} />
                 )}
               </section>
             )}
@@ -130,5 +131,10 @@ const StreamingEdit: NextPage = ({
 export default StreamingEdit;
 
 export const getServerSideProps = async (context: Props) => {
-  return pageProps(context, "getSingleOverlay", "getSingleUpload");
+  return pageProps(
+    context,
+    "getSingleOverlay",
+    "getSingleUpload",
+    "getAllDrivers"
+  );
 };

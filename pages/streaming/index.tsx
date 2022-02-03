@@ -26,7 +26,7 @@ const Streaming: NextPage = ({ session, fetchedData: overlays }: any) => {
     axios
       .delete(`https://strapi.peaklinems.de/overlays/${id}`, {
         headers: {
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQzNTk5MDUyLCJleHAiOjE2NDYxOTEwNTJ9.s7ql6-X_SmGBWObZxmcNYs0C4NnV4UGguyfdhO4VA18`,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
         },
       })
       .then(function () {
@@ -121,7 +121,10 @@ const Streaming: NextPage = ({ session, fetchedData: overlays }: any) => {
                 </Link>
                 <section className="grid gap-2 mt-6">
                   {overlays.map((overlay: overlayProps) => {
-                    if (overlay.userID === session.name) {
+                    if (
+                      overlay.userID === session.name ||
+                      overlay.private === false
+                    ) {
                       return (
                         <section
                           key={overlay.slug}
