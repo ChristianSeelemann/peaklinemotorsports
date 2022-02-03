@@ -5,4 +5,7 @@ module.exports = {
     domains: ["strapi.peaklinems.de", "static-cdn.jtvnw.net", "peaklinems.de"],
     formats: ["image/webp"],
   },
+  publicRuntimeConfig: {
+    STRAPI_TOKEN: process.env.STRAPI_TOKEN,
+  },
 };
