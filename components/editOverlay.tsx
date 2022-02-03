@@ -1,3 +1,4 @@
+import getConfig from "next/config";
 import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -6,6 +7,8 @@ import * as Yup from "yup";
 import axios from "axios";
 import Select from "react-select";
 import { driversProps } from "../types/types";
+
+const { publicRuntimeConfig } = getConfig();
 
 export default function EditOverlay({ session, overlay, drivers }: any) {
   const router = useRouter();
@@ -39,7 +42,7 @@ export default function EditOverlay({ session, overlay, drivers }: any) {
     axios
       .delete(`https://strapi.peaklinems.de/overlays/${overlay.id}`, {
         headers: {
-          Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
+          Authorization: `Bearer ${publicRuntimeConfig.STRAPI_TOKEN}`,
         },
       })
       .then(function () {
@@ -55,7 +58,7 @@ export default function EditOverlay({ session, overlay, drivers }: any) {
     axios
       .delete(`https://strapi.peaklinems.de/upload/files/${eventLogoId}`, {
         headers: {
-          Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
+          Authorization: `Bearer ${publicRuntimeConfig.STRAPI_TOKEN}`,
         },
       })
       .then(function () {
@@ -96,7 +99,7 @@ export default function EditOverlay({ session, overlay, drivers }: any) {
                   values,
                   {
                     headers: {
-                      Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
+                      Authorization: `Bearer ${publicRuntimeConfig.STRAPI_TOKEN}`,
                     },
                   }
                 )
@@ -275,7 +278,7 @@ export default function EditOverlay({ session, overlay, drivers }: any) {
                         );
                         request.setRequestHeader(
                           "Authorization",
-                          `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`
+                          `Bearer ${publicRuntimeConfig.STRAPI_TOKEN}`
                         );
                         request.send(new FormData(event.target));
                       }}

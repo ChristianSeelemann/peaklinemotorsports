@@ -1,3 +1,4 @@
+import getConfig from "next/config";
 import type { NextApiRequest, NextApiResponse, NextPage } from "next";
 import Link from "next/link";
 import Head from "next/head";
@@ -7,6 +8,8 @@ import StreamingHeader from "../../components/StreamingHeader";
 import pageProps from "../../utils/pageProps";
 import Headline from "../../components/Headline";
 import { overlayProps } from "../../types/types";
+
+const { publicRuntimeConfig } = getConfig();
 
 type Props = {
   locale: string;
@@ -26,7 +29,7 @@ const Streaming: NextPage = ({ session, fetchedData: overlays }: any) => {
     axios
       .delete(`https://strapi.peaklinems.de/overlays/${id}`, {
         headers: {
-          Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
+          Authorization: `Bearer ${publicRuntimeConfig.STRAPI_TOKEN}`,
         },
       })
       .then(function () {
