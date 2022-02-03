@@ -21,6 +21,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
+    "react-select": "^5.2.2",
     "react-tooltip": "^4.2.21",
     "sharp": "^0.29.3",
     "yup": "^0.32.11"
