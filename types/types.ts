@@ -312,6 +312,7 @@ export interface overlayProps {
   camera: boolean;
   sponsors: boolean;
   relativebox: boolean;
+  private: boolean;
   bezeichnung: string;
   eventlogo: {
     id: number;
