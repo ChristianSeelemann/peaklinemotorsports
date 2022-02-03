@@ -109,8 +109,8 @@ const Streaming: NextPage = ({ session, fetchedData: overlays }: any) => {
 
         <section className="px-4 py-4 mx-4 mt-8 select-none rounded-xl sm:px-6 lg:px-8 sm:mx-6 bg-background lg:mx-12">
           <div>
-            {!session ? (
-              "Du musst eingeloggt sein um eigene Overlays erstellen zu können."
+            {!session || !session.roles.includes("driver") ? (
+              "Du musst eingeloggt sein und ein Mitglied von Peakline Motorsports sein um eigene Overlays erstellen zu können."
             ) : overlays && overlays.length === 0 ? (
               "Keine Overlays vorhanden."
             ) : (
