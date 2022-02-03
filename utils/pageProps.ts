@@ -152,7 +152,7 @@ export default async function pageProps(
         fetchedData = await response11.json();
         break;
       case "getSingleOverlay":
-        const fetchURL12 = `${process.env.API_URL}/overlays?slug=${context.query.slug}`;
+        const fetchURL12 = `${process.env.API_URL}/overlays?slug=${context.query.id}`;
         const response12 = await fetch(fetchURL12);
         fetchedData = await response12.json();
         break;
@@ -255,7 +255,7 @@ export default async function pageProps(
         fetchedDataTwo = await response11.json();
         break;
       case "getSingleOverlay":
-        const fetchURL12 = `${process.env.API_URL}/overlays?slug=${context.query.slug}`;
+        const fetchURL12 = `${process.env.API_URL}/overlays?slug=${context.query.id}`;
         const response12 = await fetch(fetchURL12);
         fetchedDataTwo = await response12.json();
         break;
@@ -358,7 +358,7 @@ export default async function pageProps(
         fetchedDataThree = await response11.json();
         break;
       case "getSingleOverlay":
-        const fetchURL12 = `${process.env.API_URL}/overlays?slug=${context.query.slug}`;
+        const fetchURL12 = `${process.env.API_URL}/overlays?slug=${context.query.id}`;
         const response12 = await fetch(fetchURL12);
         fetchedDataThree = await response12.json();
         break;
