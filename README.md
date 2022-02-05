@@ -1,6 +1,6 @@
 # Peakline Motorsports Simracing Team Website
 
-##Techstack
+## Techstack
 
 - React with Next.js for the Frontend
 - Strapi Backend
